@@ -1,4 +1,4 @@
-# Projeto final PDS2
+# Trabalho Prático PDS2
 
 > Tema: e-commerce
 
@@ -27,8 +27,6 @@ Projeto final da disciplina de Programação e Desenvolvimento de Software II (D
 - Como administrador do sistema, quero visualizar dados das compras para que eu possa enviar os produtos comprados.
 
 - Como usuário da plataforma, quero criar e editar meu cadastro pessoal, para que possa realizar pedidos na loja.
-
-- Como usuário da plataforma, quero cadastrar cartões de créditos válidos, para que eu possa efetivar o pagamento dos produtos.
 
 - Como usuário, quero visualizar o catálogo de produtos, com opções de filtro e ordenação para que eu possa selecionar os desejados com mais facilidade.
 
