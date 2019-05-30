@@ -5,24 +5,28 @@
 
 class Clothes : public Product {
 
-  string _type;
-  string _brand;
-  string _color;
-  string _size;
+    string _size;
 
-  public:
+public:
+    //CONSTRUCTOR
     Clothes(string type, string brand, string color, string size, double price, int quantity);
 
-    virtual void set_type(string type);
-    virtual void set_brand(string brand);
-    virtual void set_color(string color);
-    virtual void set_size(string size);
+    //SETTERS
+    void set_type(string type) override;
+    void set_brand(string brand) override;
+    void set_color(string color) override;
+    void set_size(string size) override;
+    void set_price(double price) override;
+    void set_quantity(int quantity) override;
 
-    virtual string get_type();
-    virtual string get_brand();
-    virtual string get_color();
+    //GETTERS
+    double get_price() override;
+    int get_quantity() override;
+    string get_type() override;
+    string get_brand() override;
+    string get_color() override;
     string get_size();
 
 };
 
-#endif
+#endif //CLOTHES_H_PDS
