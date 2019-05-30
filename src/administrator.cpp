@@ -25,35 +25,35 @@ string Admin::get_password(){
 
 
 //ATTRIBUTES
-void add_product_storage() {
+void Admin::add_product_storage() {
 
 //arquivo
 
 }
 
 
-void change_product_quantity() {
+void Admin::change_product_quantity() {
 
 //arquivo
 
 }
 
 
-void change_product_price() {
+void Admin::change_product_price() {
 
 //arquivo
 
 }
 
 
-void remove_product() {
+void Admin::remove_product() {
 
 //arquivo
 
 }
 
 
-void show_storage() {
+void Admin::show_storage() {
 
 //arquivo
 
