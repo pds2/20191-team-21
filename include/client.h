@@ -8,15 +8,22 @@
 #include "sunglasses.h"
 
 class Client : public User {
-
-  public:
+    //attributes
     Cart client_cart;
 
+public:
+    //CONSTRUCTOR
     Client(string name, string login, string password);
 
+    //GETTERS
+    string get_name() override;
+    string get_login() override;
+    string get_password() override;
+
+    //METHODS
     void search_product();
     void see_cart();
 
 };
 
-#endif
+#endif //CLIENT_H_PDS
