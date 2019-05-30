@@ -3,8 +3,6 @@
 #include "clothes.h"
 
 
-//Clothes::Clothes(string type, string brand, string color, string size, double price)
-
 //CONSTRUCTOR
 Clothes::Clothes(string type, string brand, string color, string size, double price, int quantity)
         : Product(price, quantity, std::move(type), std::move(color), std::move(brand)) {

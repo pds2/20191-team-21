@@ -1,13 +1,12 @@
 #include "menu.h"
 
-
 void sign_up() {
 
   int admin_or_client;
   bool repeat_registration = true; //repetir o cadastro caso haja algum erro
 
   while(repeat_registration) {
-    
+
     cout << "--------------------" << endl
     << "Qual tipo de conta voce gostaria de criar?" << endl
     << "1 - Administrador" << endl << "2 - Cliente" << endl
@@ -52,13 +51,13 @@ void register_user(int amdin_or_client) {
   string password, password_in_file;
   string confirm_password;
   int a_or_c = amdin_or_client;
-  
+
   bool valid_registration = false;
-  
+
   while(!valid_registration) {
-    
+
     bool valid_password = false;
-    bool valid_login = false;
+    bool valid_login = true;
 
     cout << "--------------------" << endl;
     cout << "Nome: ";
@@ -67,7 +66,7 @@ void register_user(int amdin_or_client) {
     cin >> login;
     cout << "Senha: ";
     cin >> password;
-    cout << "Confirme sua senha: "; 
+    cout << "Confirme sua senha: ";
     cin >> confirm_password;
     cout << endl;
 
@@ -76,26 +75,29 @@ void register_user(int amdin_or_client) {
 
       admins >> name_in_file >> login_in_file >> password_in_file;
 
-      if(login_in_file == login)
+      if(login_in_file == login) {
+        valid_login = false;
         break;
-
+      }
     }
     admins.close();
 
-    if(!valid_login) {
+    if(!valid_login){
       cout << "Esse login ja esta em uso, tente novamente" << endl << endl;
       break;
     }
-    else{ //se nao existir em admin, le o registro de clientes
+
+    else{
 
       clients.open("client-login.txt", ios::app | ios::in);
       while(!clients.eof()) {
 
         clients >> name_in_file >> login_in_file >> password_in_file;
-      
-      if(login_in_file == login)
-        break;
 
+        if(login_in_file == login) {
+          valid_login = false;
+          break;
+        }
       }
       clients.close();
 
@@ -105,9 +107,8 @@ void register_user(int amdin_or_client) {
       }
       else //se nao existir nos dois registros, torna o login valido
         valid_login = true;
-
     }
-    
+
     if(confirm_password != password) //verifica se as senhas digitadas sao iguais
       cout << "As senhas digitadas nao correspondem" << endl << endl;
 
@@ -116,11 +117,11 @@ void register_user(int amdin_or_client) {
 
 
     if(valid_login && valid_password)
-      valid_registration = true;    
+      valid_registration = true;
 
     if(valid_registration) { //cadastro eh valido quando login e senha passam pelos testes
       if(a_or_c == 1) { //se for admin, registra no arquivo dos admins
-        
+
         admins.open("admin-login.txt", ios::app | ios::out);
         admins << name << " " << login << " " << password << endl;
         admins.close();
@@ -129,7 +130,7 @@ void register_user(int amdin_or_client) {
 
       }
       else if(a_or_c == 2) { //se for cliente, registra no arquivo dos clientes
-        
+
         clients.open("client-login.txt", ios::app | ios::out);
         clients << name << " " << login << " " << password << endl;
         clients.close();
@@ -238,12 +239,12 @@ void admin_panel(Admin *user_admin) {
       case 4:
         user_admin->remove_product();
         break;
-      
+
       case 5:
         user_admin->show_storage();
         break;
-      
-      case 6: 
+
+      case 6:
         close_panel = true;
         break;
 
@@ -289,7 +290,7 @@ void client_panel(Client *user_client) {
       default:
         cout << "Comando invalido" << endl << endl;
         break;
-        
+
     }
   }
 }

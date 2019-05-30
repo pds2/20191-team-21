@@ -1,11 +1,4 @@
 #include <utility>
-
-#include <utility>
-
-#include <utility>
-
-#include <utility>
-
 #include "administrator.h"
 
 //CONSTRUCTOR
@@ -51,7 +44,6 @@ void Admin::remove_product() {
 //arquivo
 
 }
-
 
 void Admin::show_storage() {
 
