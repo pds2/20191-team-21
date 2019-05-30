@@ -8,10 +8,11 @@
 
 class Cart {
 
-  vector<Product> cart_products;
+    vector<Product> cart_products;
+    double _total_price = 0;
 
-  public:
-    void get_products();
+public:
+    vector<Product> get_products(); // retorn um vector, cuidado para quando for implementar incluir 'produto.h'
     double get_total_price();
     void add_clothes(Clothes c_added, int quantity);
     void add_shoes(Shoes s_added, int quantity);
@@ -22,4 +23,4 @@ class Cart {
 
 };
 
-#endif
+#endif // CART_H_PDS
