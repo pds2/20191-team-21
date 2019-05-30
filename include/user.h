@@ -1,3 +1,5 @@
+#include <utility>
+
 #ifndef USER_H_PDS
 #define USER_H_PDS
 
@@ -10,23 +12,20 @@
 using namespace std;
 
 class User {
+public:
+    //attributes
+    string _name;
+    string _login;
+    string _password;
 
-  string _name;
-  string _login;
-  string _password;
-
-  public:
-
+    //CONSTRUCTOR
     User(string name, string login, string password);
 
-    void set_name(string name);
-    void set_login(string login);
-    void set_password(string password);
-
-    string get_name();
-    string get_login();
-    string get_password();
+    //methods
+    virtual string get_name();
+    virtual string get_login();
+    virtual string get_password();
 
 };
 
-#endif
+#endif //USER_H_PDS
