@@ -10,6 +10,7 @@
 class Client : public User {
     //attributes
     Cart client_cart;
+    map<Product, unsigned int> cart;
 
 public:
     //CONSTRUCTOR
@@ -23,7 +24,10 @@ public:
     //METHODS
     void search_product();
     void see_cart();
-
+// MAP FUNCTIONS
+    void add_product (Product const &product, unsigned int quantity);
+    void delete_product (Product const &product, unsigned int quantity);
+    void list_products();
 };
 
 #endif //CLIENT_H_PDS

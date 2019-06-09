@@ -3,7 +3,11 @@
 
 //CONSTRUCTOR
 Sunglasses::Sunglasses(string type, string brand, string color, double price, int quantity)
-        : Product(price, quantity, std::move(type), std::move(color), std::move(brand)){};
+        : Product(price, quantity, std::move(type), std::move(color), std::move(brand)){
+    string id = type + brand + color;
+    transform(id.begin(), id.end(), id.begin(), ::toupper);
+    this->_product_id = id;
+};
 
 //SETTERS
 void Sunglasses::set_type(string type) {
@@ -56,4 +60,13 @@ string Sunglasses::get_color() {
 
 int Sunglasses::get_size() {
     return this->_size;
+}
+
+void Sunglasses::print() const {
+    cout << "Produto: " << _type << endl
+        << "ID: " << _product_id << endl
+        << "Marca: " << _brand << endl
+        << "Cor: " << _color << endl
+        << "Tamanho: " << _size << endl
+        << "Preço(R$): " << _price << endl;
 }

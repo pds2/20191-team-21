@@ -1,13 +1,15 @@
 #ifndef CART_H_PDS
 #define CART_H_PDS
 
+#include <map>
+
 #include "product.h"
 #include "clothes.h"
 #include "shoes.h"
 #include "sunglasses.h"
 
 class Cart {
-
+protected:
     vector<Product> cart_products;
     double _total_price = 0;
 

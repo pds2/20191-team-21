@@ -27,6 +27,9 @@ public:
     string get_color() override;
     string get_size();
 
+//PRINTER
+    virtual void print() const override;
+
 };
 
 #endif //CLOTHES_H_PDS

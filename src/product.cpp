@@ -54,3 +54,34 @@ string Product::get_brand() {
 string Product::get_color() {
     return this->_color;
 }
+
+//OPERATORS
+
+bool Product::operator>(const Product &product) const {
+    return (this->_product_id > product._product_id);
+}
+bool Product::operator>=(const Product &product) const {
+    return (this->_product_id >= product._product_id);
+}
+bool Product::operator<(const Product &product) const {
+    return (this->_product_id < product._product_id);
+}
+bool Product::operator<=(const Product &product) const {
+    return (this->_product_id <= product._product_id);
+}
+bool Product::operator!=(const Product &product) const {
+    return (this->_product_id != product._product_id);
+}
+bool Product::operator==(const Product &product) const {
+    return (this->_product_id == product._product_id);
+}
+bool Product::equals(const Product &product) const {
+    return (this->_product_id == product._product_id);
+}
+
+// void Product::print() const {
+//         cout << "Produto: " << this->_type << endl
+//         << "Marca: " << this->_brand << endl
+//         << "Cor: " << this->_color << endl
+//         << "Preço(R$): " << this->_price << endl;
+// }

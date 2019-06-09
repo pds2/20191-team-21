@@ -5,6 +5,12 @@
 Shoes::Shoes(string type, string brand, string color, int size, double price, int quantity)
         : Product(price, quantity, std::move(type), std::move(color), std::move(brand)) {
     this->_size = size;
+    
+    stringstream ss;
+    ss << size;
+    string id = type + brand + color + ss.str();
+    transform(id.begin(), id.end(), id.begin(), ::toupper);
+    this->_product_id = id;
 }
 
 //SETTERS
@@ -58,4 +64,13 @@ string Shoes::get_color() {
 
 int Shoes::get_size() {
     return this->_size;
+}
+
+void Shoes::print() const{
+    cout << "Produto: " << _type << endl
+        << "ID: " << _product_id << endl
+        << "Marca: " << _brand << endl
+        << "Cor: " << _color << endl
+        << "Tamanho: " << _size << endl
+        << "Preço(R$): " << _price << endl;
 }

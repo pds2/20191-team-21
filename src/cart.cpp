@@ -14,7 +14,6 @@ double Cart::get_total_price() {
 
 void Cart::add_clothes(Clothes c_added, int quantity) {
 
-
 }
 
 

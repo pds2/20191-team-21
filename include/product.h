@@ -4,10 +4,14 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <sstream>
+#include <algorithm>
 
 using namespace std;
 
 class Product {
+protected:
+    string _product_id;
 public:
     double _price;
     int _quantity;
@@ -16,6 +20,7 @@ public:
     string _brand;
 //CONSTRUCTOR
     Product(double price, int _quantity, string type, string color, string brand);
+    
 
 
 //SETTERS
@@ -32,6 +37,17 @@ public:
     virtual string get_color();
     virtual string get_brand();
 
+//OPERATORS
+    bool operator>(const Product &product) const;
+    bool operator>=(const Product &product) const;
+    bool operator<(const Product &product) const;
+    bool operator<=(const Product &product) const;
+    bool operator!=(const Product &product) const;
+    bool operator==(const Product &product) const;
+    bool equals(const Product &product) const;
+
+//PRINTER
+    virtual void print() const = 0;
 };
 
 #endif //PRODUCT_H_PDS

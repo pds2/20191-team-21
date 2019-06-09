@@ -26,7 +26,8 @@ public:
     string get_brand() override;
     string get_color() override;
     int get_size();
-
+//PRINT
+    virtual void print() const override;
 };
 
 #endif //SHOES_H_PDS

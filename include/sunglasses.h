@@ -26,7 +26,8 @@ public:
     string get_brand() override;
     string get_color() override;
     int get_size();
-
+//PRINTER
+    virtual void print() const override;
 };
 
 #endif //SUNGLASSES_H_PDS

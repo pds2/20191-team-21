@@ -2,19 +2,43 @@
 
 //CONSTRUCTOR
 Client::Client(string name, string login, string password) : User(std::move(name), std::move(login), std::move(password))
-{};
+{}
 
 //GETTERS
 string Client::get_name(){
     return this->_name;
-};
+}
 string Client::get_login(){
     return this->_login;
-};
+}
 string Client::get_password(){
     return this->_password;
-};
+}
 
+//MAP FUNCTIONS
+void Client::add_product (Product const &product, unsigned int quantity){
+    if (this->cart.find(product) == this->cart.end()){
+        this->cart[product] = quantity;
+    }
+    else {
+        this->cart[product] += quantity;
+    }
+}
+//NEED ERROR HANDLING!!
+void Client::delete_product (Product const &product, unsigned int quantity){
+    this->cart[product] -= quantity;
+}
+void Client::list_products(){
+    map<Product, unsigned int>::iterator it;
+
+    cout << "Seu Carrinho" << endl;
+    for ( it = this->cart.begin(); it != this->cart.end(); it++ )
+    {
+        it->first.print();
+        std::cout << "Qtd no estoque: " << it->second
+                  << endl ;
+    }
+}
 
 //METHODS
 void Client::search_product() {
@@ -302,7 +326,6 @@ void Client::search_product() {
         }
     }
 }
-
 
 void Client::see_cart() {
 
