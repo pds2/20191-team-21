@@ -4,8 +4,8 @@
 
 
 //CONSTRUCTOR
-Clothes::Clothes(string type, string brand, string color, string size, double price, int quantity)
-        : Product(price, quantity, std::move(type), std::move(color), std::move(brand)) {
+Clothes::Clothes(string type, string brand, string color, string size, int quantity, double price)
+        : Product(std::move(type), std::move(brand), std::move(color), quantity, price) {
     this->_size = std::move(size);
 }
 
