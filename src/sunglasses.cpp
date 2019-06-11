@@ -2,19 +2,17 @@
 
 
 //CONSTRUCTOR
-Sunglasses::Sunglasses(string type, string brand, string color, double price, int quantity)
-        : Product(price, quantity, std::move(type), std::move(color), std::move(brand)){};
+Sunglasses::Sunglasses(string brand, string color, int quantity, double price) 
+        : Product("Oculos ", std::move(brand), std::move(color), quantity, price){};
 
 //SETTERS
 void Sunglasses::set_type(string type) {
     this->_type = std::move(type);
 }
 
-
 void Sunglasses::set_brand(string brand) {
     this->_brand = std::move(brand);
 }
-
 
 void Sunglasses::set_color(string color) {
     this->_color = std::move(color);
@@ -27,10 +25,6 @@ void Sunglasses::set_price(double price){
 void Sunglasses::set_quantity(int quantity){
     this->_quantity = quantity;
 };
-
-void Sunglasses::set_size(int size){
-    this->_size = size;
-}
 
 
 //GETTERS
@@ -52,8 +46,4 @@ string Sunglasses::get_brand() {
 
 string Sunglasses::get_color() {
     return this->_color;
-}
-
-int Sunglasses::get_size() {
-    return this->_size;
 }
