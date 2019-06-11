@@ -19,43 +19,43 @@ string Client::get_password(){
 //METHODS
 void Client::search_product() {
 
-    ifstream clothes_strg, shoes_strg, sunglasses_strg;
+  ifstream clothes_strg, shoes_strg, sunglasses_strg;
 
-    int product_option, add_or_not, category;
-    int size_in_shoes, size_s;
-    string type_in_file, brand_in_file, size_in_clothes, color_in_file;
-    string type, brand, size_c, color;
-    double price;
-    int quantity_desired, quantity;
+  int product_option, add_or_not, category;
+  int size_in_shoes, size_s;
+  string type_in_file, brand_in_file, size_in_clothes, color_in_file;
+  string type, brand, size_c, color;
+  double price;
+  int quantity_desired, quantity;
 
-    bool product_menu_open = true;
-    bool product_exists = false;
+  bool product_menu_open = true;
+  bool product_exists = false;
 
-    while(product_menu_open) {
+  while(product_menu_open) {
 
-      cout << "Selecione a categoria do produto que voce deseja comprar"
-          << endl << "1 - Roupa" << endl << "2 - Sapato" << endl <<
-          "3 - Oculos de sol" << endl;
-      cin >> category;
-      cout << endl;
+    cout << "Selecione a categoria do produto que voce deseja comprar"
+      << endl << "1 - Roupa" << endl << "2 - Sapato" << endl <<
+      "3 - Oculos de sol" << endl;
+    cin >> category;
+    cout << endl;
 
-      switch(category) { //cada opcao mostra todos os produtos da categoria escolhida
+    switch(category) { //cada opcao mostra todos os produtos da categoria escolhida
 
-        case 1:
-          clothes_strg.open("storage-clothes.txt", ios::in);
-          while(!clothes_strg.eof()) {
+      case 1:
+        clothes_strg.open("storage-clothes.txt", ios::in);
+        while(!clothes_strg.eof()) {
 
-            clothes_strg >> type_in_file >> brand_in_file >> color_in_file >> size_in_clothes >> quantity >> price;
+          clothes_strg >> type_in_file >> brand_in_file >> color_in_file >> size_in_clothes >> quantity >> price;
 
-            cout << type_in_file << " " << brand_in_file << endl;
-            cout << "Cor: " << color_in_file << endl;
-            cout << "Tamanho: " << size_in_clothes << endl;
-            cout << "Preco: " << price << endl;
-            cout << "Quantidade disponivel: " << quantity << endl << endl;
+          cout << type_in_file << " " << brand_in_file << endl;
+          cout << "Cor: " << color_in_file << endl;
+          cout << "Tamanho: " << size_in_clothes << endl;
+          cout << "Preco: " << price << endl;
+          cout << "Quantidade disponivel: " << quantity << endl << endl;
 
-          }
-          clothes_strg.close();
-          break;
+        }
+        clothes_strg.close();
+        break;
 
         case 2:
           shoes_strg.open("storage-shoes.txt", ios::in);
@@ -239,7 +239,10 @@ void Client::search_product() {
                       cin >> quantity_desired;
                       cout << endl;
 
-                      if(quantity_desired > quantity) {
+                      if(quantity_desired < 1) {
+                        cout << "Quantidade invalida" << endl << endl;
+                      }
+                      else if(quantity_desired > quantity) {
                         cout << "Temos " << quantity << " unidades desse produto"
                         << endl << endl;
                       }
@@ -257,7 +260,7 @@ void Client::search_product() {
                           close_panel = true;
                         }
                         else if(category == 3) {
-                          Sunglasses added(type, brand, color, price, quantity);
+                          Sunglasses added(brand, color, price, quantity);
                           client_cart.add_sunglasses(added, quantity_desired);
                           quantity_exists = true;
                           close_panel = true;
