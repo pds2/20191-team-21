@@ -9,7 +9,7 @@ class Clothes : public Product {
 
 public:
     //CONSTRUCTOR
-    Clothes(string type, string brand, string color, string size, double price, int quantity);
+    Clothes(string type, string brand, string color, string size, int quantity, double price);
 
     //SETTERS
     void set_type(string type) override;
