@@ -15,7 +15,7 @@ public:
     string _color;
     string _brand;
 //CONSTRUCTOR
-    Product(double price, int _quantity, string type, string color, string brand);
+    Product(string type, string brand, string color, int quantity, double price);
 
 
 //SETTERS
