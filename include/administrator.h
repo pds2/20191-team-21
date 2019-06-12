@@ -2,8 +2,10 @@
 #define ADMIN_H_PDS
 
 #include "user.h"
+#include "warehouse.h"
 
 class Admin : public User {
+    Warehouse warehouse;
 
 public:
     //CONSTRUCTOR
@@ -15,7 +17,7 @@ public:
     string get_password() override;
 
     //METHODS
-    void add_product_storage();
+    void add_product_warehouse();
     void change_product_quantity();
     void change_product_price();
     void remove_product();

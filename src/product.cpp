@@ -4,12 +4,11 @@
 
 //CONSTRUCTOR
 // Product::Product(double price, int quantity, string type, string color, string brand, string product_id){
-Product::Product(double price, int quantity, string type, string color, string brand){
+Product::Product(double price, string type, string color, string brand){
     string id = type + brand + color;
     transform(id.begin(), id.end(), id.begin(), ::toupper);
     this->_product_id = id;
     this->_price = price;
-    this->_quantity = quantity;
     this->_brand = std::move(brand);
     this->_color = std::move(color);
     this->_type = std::move(type);
@@ -33,18 +32,10 @@ void Product::set_color(string color) {
 void Product::set_price(double price){
     this->_price = price;
 };
-void Product::set_quantity(int quantity){
-    this->_quantity = quantity;
-};
-
 
 //GETTERS
 double Product::get_price(){
     return this->_price;
-}
-
-int Product::get_quantity(){
-    return this->_quantity;
 }
 
 string Product::get_type() {

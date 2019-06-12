@@ -2,8 +2,8 @@
 
 
 //CONSTRUCTOR
-Sunglasses::Sunglasses(string type, string brand, string color, double price, int quantity)
-        : Product(price, quantity, std::move(type), std::move(color), std::move(brand)){
+Sunglasses::Sunglasses(string type, string brand, string color, double price)
+        : Product(price, std::move(type), std::move(color), std::move(brand)){
             this->_product_id += to_string(this->_size);
 };
 
@@ -26,10 +26,6 @@ void Sunglasses::set_price(double price){
     this->_price = price;
 };
 
-void Sunglasses::set_quantity(int quantity){
-    this->_quantity = quantity;
-};
-
 void Sunglasses::set_size(int size){
     this->_size = size;
 }
@@ -38,10 +34,6 @@ void Sunglasses::set_size(int size){
 //GETTERS
 double Sunglasses::get_price(){
     return this->_price;
-}
-
-int Sunglasses::get_quantity(){
-    return this->_quantity;
 }
 
 string Sunglasses::get_type() {

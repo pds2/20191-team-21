@@ -4,8 +4,8 @@
 
 
 //CONSTRUCTOR
-Clothes::Clothes(string type, string brand, string color, string size, double price, int quantity)
-        : Product(price, quantity, std::move(type), std::move(color), std::move(brand)) {
+Clothes::Clothes(string type, string brand, string color, string size, double price)
+        : Product(price, std::move(type), std::move(color), std::move(brand)) {
             transform(size.begin(), size.end(), size.begin(), ::toupper);
             this->_product_id += size;
 }
@@ -33,18 +33,11 @@ void Clothes::set_size(string size) {
 void Clothes::set_price(double price){
     this->_price = price;
 };
-void Clothes::set_quantity(int quantity){
-    this->_quantity = quantity;
-};
 
 
 //GETTERS
 double Clothes::get_price(){
     return this->_price;
-}
-
-int Clothes::get_quantity(){
-    return this->_quantity;
 }
 
 string Clothes::get_type() {

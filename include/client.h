@@ -11,7 +11,7 @@
 
 class Client : public User {
     //attributes
-    Cart client_cart;
+//    Cart client_cart;
     map<shared_ptr<Product>, unsigned int> cart;
 
 public:
