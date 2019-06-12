@@ -6,6 +6,7 @@
 #include <vector>
 #include <sstream>
 #include <algorithm>
+#include <map>
 
 using namespace std;
 
@@ -19,8 +20,8 @@ public:
     string _color;
     string _brand;
 //CONSTRUCTOR
-    Product(double price, int _quantity, string type, string color, string brand);
-    
+    Product(double price, int quantity, string type, string color, string brand);
+//    Product(double price, int quantity, string type, string color, string brand, string product_id);
 
 
 //SETTERS

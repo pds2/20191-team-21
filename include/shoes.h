@@ -26,7 +26,10 @@ public:
     string get_brand() override;
     string get_color() override;
     int get_size();
-//PRINT
+
+    //OPERATORS
+    bool operator<(const Shoes &shoes) const;
+    //PRINT
     virtual void print() const override;
 };
 

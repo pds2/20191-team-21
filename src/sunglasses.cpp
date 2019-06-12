@@ -4,9 +4,7 @@
 //CONSTRUCTOR
 Sunglasses::Sunglasses(string type, string brand, string color, double price, int quantity)
         : Product(price, quantity, std::move(type), std::move(color), std::move(brand)){
-    string id = type + brand + color;
-    transform(id.begin(), id.end(), id.begin(), ::toupper);
-    this->_product_id = id;
+            this->_product_id += to_string(this->_size);
 };
 
 //SETTERS
@@ -62,11 +60,16 @@ int Sunglasses::get_size() {
     return this->_size;
 }
 
+// OPERATORS
+bool Sunglasses::operator<(const Sunglasses &sunglasses) const {
+    return (this->_product_id < sunglasses._product_id);
+}
+
 void Sunglasses::print() const {
     cout << "Produto: " << _type << endl
         << "ID: " << _product_id << endl
         << "Marca: " << _brand << endl
         << "Cor: " << _color << endl
-        << "Tamanho: " << _size << endl
+        << "Tamanho: " << "ÚNICO" << endl
         << "Preço(R$): " << _price << endl;
 }

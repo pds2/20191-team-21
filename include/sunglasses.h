@@ -26,7 +26,11 @@ public:
     string get_brand() override;
     string get_color() override;
     int get_size();
-//PRINTER
+
+    //OPERATORS
+    bool operator<(const Sunglasses &sunglasses) const;
+
+    //PRINTER
     virtual void print() const override;
 };
 

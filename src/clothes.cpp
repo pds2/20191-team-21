@@ -6,10 +6,8 @@
 //CONSTRUCTOR
 Clothes::Clothes(string type, string brand, string color, string size, double price, int quantity)
         : Product(price, quantity, std::move(type), std::move(color), std::move(brand)) {
-    this->_size = std::move(size);
-    string id = type + brand + color + size;
-    transform(id.begin(), id.end(), id.begin(), ::toupper);
-    this->_product_id = id;
+            transform(size.begin(), size.end(), size.begin(), ::toupper);
+            this->_product_id += size;
 }
 
 //SETTERS
@@ -63,6 +61,11 @@ string Clothes::get_color() {
 
 string Clothes::get_size() {
     return this->_size;
+}
+
+// OPERATORS
+bool Clothes::operator<(const Clothes &clothes) const {
+    return (this->_product_id < clothes._product_id);
 }
 
 void Clothes::print() const{

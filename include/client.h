@@ -26,7 +26,7 @@ public:
     //METHODS
     void search_product();
     void see_cart();
-// MAP FUNCTIONS
+    // MAP FUNCTIONS
     void add_product (const shared_ptr<Product> product, unsigned int quantity);
     void remove_product (const shared_ptr<Product> product, unsigned int quantity);
     void list_products();

@@ -21,8 +21,9 @@ TEST_CASE("Test Cart Creation") {
 TEST_CASE("Cart testing") {
     Client cliente_1 = Client("John Snow", "jsn", "8888!!!@@##$%*");
     auto roupa = make_shared<Clothes>("tipo", "marca", "cor", "tamanho", 2.0, 1);
-//    shared_ptr<Clothes> roupa = Clothes("tipo", "marca", "cor", "tamanho", 2.0, 1);
     cliente_1.add_product(roupa, 1);
+    auto sg = make_shared<Sunglasses>("tipo", "marca", "cor", 2.0, 1);
+    cliente_1.add_product(sg, 1);
     cliente_1.list_products();
 }
 

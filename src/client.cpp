@@ -17,9 +17,9 @@ string Client::get_password(){
 
 //MAP FUNCTIONS
 void Client::add_product (const shared_ptr<Product> product, unsigned int quantity){
-    
+
     map<shared_ptr<Product>, unsigned int>::iterator it = cart.find(product);
-    
+
     if (it != cart.end()){
         it->second += quantity;
         return;
@@ -39,8 +39,7 @@ void Client::remove_product (const shared_ptr<Product> product, unsigned int qua
             return;
         }
     }
-    cart.erase(it); 
-
+    cart.erase(it);
 }
 void Client::list_products(){
     map<shared_ptr<Product>, unsigned int>::iterator it;

@@ -27,7 +27,10 @@ public:
     string get_color() override;
     string get_size();
 
-//PRINTER
+    //OPERATORS
+    bool operator<(const Clothes &clothes) const;
+
+    //PRINTER
     virtual void print() const override;
 
 };

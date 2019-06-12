@@ -3,9 +3,13 @@
 #include "product.h"
 
 //CONSTRUCTOR
-Product::Product(double price, int _quantity, string type, string color, string brand){
+// Product::Product(double price, int quantity, string type, string color, string brand, string product_id){
+Product::Product(double price, int quantity, string type, string color, string brand){
+    string id = type + brand + color;
+    transform(id.begin(), id.end(), id.begin(), ::toupper);
+    this->_product_id = id;
     this->_price = price;
-    this->_quantity = _quantity;
+    this->_quantity = quantity;
     this->_brand = std::move(brand);
     this->_color = std::move(color);
     this->_type = std::move(type);
