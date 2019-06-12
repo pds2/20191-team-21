@@ -1,4 +1,4 @@
-![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Logo_UFMG.png/320px-Logo_UFMG.png)
+![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Logo_UFMG.png/320px-Logo_UFMG.png =258x98)
 # Trabalho Prático PDS2
 
 ## Tema: e-commerce
