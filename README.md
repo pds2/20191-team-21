@@ -1,6 +1,6 @@
 # Trabalho Prático PDS2
 
-> Tema: e-commerce
+## Tema: e-commerce
 
 ## Introdução
 
