@@ -9,7 +9,7 @@ Projeto final da disciplina de **Programação e Desenvolvimento de Software II 
 |Motivação    |Integrantes   |Documentação  |User Stories  | Como usar  |
 | :---------: |:-----------: |:-----------: |:-----------: |:----------:|
 
-(a tabela acima terá links clicáveis, como os que o Flávio usou no repositório da matéria)
+(a tabela acima terá links , como os que o Flávio usou no repositório da matéria)
 
 ## Introdução
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae lacus a orci placerat tempor id sed orci. Duis aliquet nec lorem vel mattis. Proin sit amet odio sed metus finibus viverra. Maecenas elementum, libero fermentum porttitor pretium, diam orci faucibus enim, at suscipit metus magna ut massa. Vivamus auctor at sem ac feugiat. Duis cursus placerat convallis. Aenean efficitur sit amet felis vel venenatis. Duis nec molestie libero. Nullam vel sodales neque
@@ -26,7 +26,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae lacus a 
 - Rafael Mendonca (@rfm2018)
 - Vitor Mafra (@vitor-mafra)
 
-> Professores: Flávio Figueiredo (@flaviovdf) e Júlio César
+> Professores: Flávio Figueiredo (@flaviovdf) e Júlio César(@ ?)
 
 ### Documentação
   LINK DOCUMENTAÇÃO
