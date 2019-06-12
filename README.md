@@ -26,7 +26,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae lacus a 
 - Rafael Mendonca (@rfm2018)
 - Vitor Mafra (@vitor-mafra)
 
-> Professores: Flávio Figueiredo (@flaviovdf) e Júlio César(@ ?)
+> Professores: Flávio Figueiredo (@flaviovdf) e Júlio César(@juliosoaresreis)
 
 ### Documentação
   LINK DOCUMENTAÇÃO
