@@ -9,6 +9,8 @@
 |Motivação    |Integrantes   |Documentação  |User Stories  | Como usar  |
 | :---------: |:-----------: |:-----------: |:-----------: |:----------:|
 
+(a tabela acima terá links clicáveis, como os que o Flávio usou no repositório da matéria)
+
 ## Introdução
 
 Projeto final da disciplina de *Programação e Desenvolvimento de Software II (DCC204)* da UFMG em 2019/1.
