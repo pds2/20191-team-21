@@ -6,12 +6,15 @@
 
 ## Tema: e-commerce
 
-|Motivação    |Integrantes   |Documentação  |User Stories  | Como usar |
+|Motivação    |Integrantes   |Documentação  |User Stories  | Como usar  |
 | :---------: |:-----------: |:-----------: |:-----------: |:----------:|
 
 ## Introdução
 
 Projeto final da disciplina de *Programação e Desenvolvimento de Software II (DCC204)* da UFMG em 2019/1.
+
+### Motivação
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae lacus a orci placerat tempor id sed orci. Duis aliquet nec lorem vel mattis. Proin sit amet odio sed metus finibus viverra. Maecenas elementum, libero fermentum porttitor pretium, diam orci faucibus enim, at suscipit metus magna ut massa. Vivamus auctor at sem ac feugiat. Duis cursus placerat convallis. Aenean efficitur sit amet felis vel venenatis. Duis nec molestie libero. Nullam vel sodales neque.
 
 ### Integrantes
 
@@ -22,6 +25,9 @@ Projeto final da disciplina de *Programação e Desenvolvimento de Software II (
 - Vitor Mafra (@vitor-mafra)
 
 > Professores: Flávio Figueiredo e Júlio César
+
+### Documentação
+  LINK DOCUMENTAÇÃO
 
 ### User Stories
 
@@ -41,3 +47,11 @@ Projeto final da disciplina de *Programação e Desenvolvimento de Software II (
 
 - Como usuário, gostaria de efetivar compras dos produtos selecionados no carrinho, utilizando um cartão cadastrado.
 
+### Como usar
+Aqui vai um guia que vou fazer com instruções de baixar e executar o release
+  ``` 
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+    Praesent vitae lacus a orci placerat tempor id sed orci. 
+    Duis aliquet nec lorem vel mattis. Proin sit amet odio sed metus finibus viverra.
+    Maecenas elementum, libero fermentum porttitor pretium, diam orci faucibus enim, at suscipit metus magna ut massa.  
+  ```
