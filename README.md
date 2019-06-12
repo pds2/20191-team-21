@@ -6,6 +6,9 @@
 
 ## Tema: e-commerce
 
+|Motivação    |Integrantes   |Documentação  |User Stories  | Como usar |
+| :---------: |:-----------: |:-----------: |:-----------: |:----------:|
+
 ## Introdução
 
 Projeto final da disciplina de *Programação e Desenvolvimento de Software II (DCC204)* da UFMG em 2019/1.
