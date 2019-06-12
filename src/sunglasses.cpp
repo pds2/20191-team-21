@@ -4,7 +4,7 @@
 //CONSTRUCTOR
 Sunglasses::Sunglasses(string type, string brand, string color, double price)
         : Product(price, std::move(type), std::move(color), std::move(brand)){
-            this->_product_id += to_string(this->_size);
+            this->_product_id = ID_SUNGLASSES + this->_product_id + to_string(this->_size);
 };
 
 //SETTERS

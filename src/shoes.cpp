@@ -4,7 +4,8 @@
 //CONSTRUCTOR
 Shoes::Shoes(string type, string brand, string color, int size, double price)
         : Product(price, std::move(type), std::move(color), std::move(brand)) {
-            this->_product_id += to_string(size);
+            this->_product_id = ID_SHOES + this->_product_id + to_string(size);
+
 }
 
 //SETTERS

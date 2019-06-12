@@ -8,6 +8,10 @@
 #include <algorithm>
 #include <map>
 
+#define ID_CLOTHES "000"
+#define ID_SHOES "001"
+#define ID_SUNGLASSES "002"
+
 using namespace std;
 
 class Product {

@@ -34,6 +34,27 @@ void Warehouse::add_product(Sunglasses sunglasses, unsigned int quantity){
         this->_sunglasses.insert(pair<Sunglasses, unsigned int>(sunglasses, quantity));
     }
 }
+void Warehouse::delete_product(string product){
+    if (product.substr(0, 3) == ID_CLOTHES){
+        Warehouse::delete_clothes(product);
+    }
+    else if (product.substr(0, 3) == ID_SHOES){
+        Warehouse::delete_shoes(product);
+    }
+    else if (product.substr(0, 3) == ID_SUNGLASSES){
+        Warehouse::delete_sunglasses(product);
+    }
+    else {
+        cout << endl << "Chave inválida! Valor inserido: " << product << endl;
+    }
+}
+
+void Warehouse::delete_clothes(string product){
+    
+}
+void Warehouse::delete_shoes(string product)
+void Warehouse::delete_sunglasses(string product)
+
 void Warehouse::delete_product(Clothes clothes){
 
 }

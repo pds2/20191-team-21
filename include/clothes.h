@@ -4,7 +4,7 @@
 #include "product.h"
 
 class Clothes : public Product {
-
+private:
     string _size;
 
 public:

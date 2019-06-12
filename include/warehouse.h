@@ -19,6 +19,11 @@ public:
     void add_product(Shoes shoes, unsigned int quantity);
     void add_product(Sunglasses sunglasses, unsigned int quantity);
 
+    void delete_product(string product);
+    void delete_clothes(string product);
+    void delete_shoes(string product);
+    void delete_sunglasses(string product);
+
     void delete_product(Clothes clothes);
     void delete_product(Shoes shoes);
     void delete_product(Sunglasses sunglasses);

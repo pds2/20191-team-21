@@ -7,7 +7,7 @@
 Clothes::Clothes(string type, string brand, string color, string size, double price)
         : Product(price, std::move(type), std::move(color), std::move(brand)) {
             transform(size.begin(), size.end(), size.begin(), ::toupper);
-            this->_product_id += size;
+            this->_product_id = ID_CLOTHES + this->_product_id + size;
 }
 
 //SETTERS
