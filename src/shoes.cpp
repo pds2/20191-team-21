@@ -66,7 +66,7 @@ int Shoes::get_size() {
     return this->_size;
 }
 
-void Shoes::print() const{
+void Shoes::print() const {
     cout << "Produto: " << _type << endl
         << "ID: " << _product_id << endl
         << "Marca: " << _brand << endl

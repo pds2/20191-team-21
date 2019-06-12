@@ -1,6 +1,8 @@
 #ifndef CLIENT_H_PDS
 #define CLIENT_H_PDS
 
+#include <memory>
+
 #include "user.h"
 #include "cart.h"
 #include "clothes.h"
@@ -10,7 +12,7 @@
 class Client : public User {
     //attributes
     Cart client_cart;
-    map<Product, unsigned int> cart;
+    map<shared_ptr<Product>, unsigned int> cart;
 
 public:
     //CONSTRUCTOR
@@ -25,8 +27,8 @@ public:
     void search_product();
     void see_cart();
 // MAP FUNCTIONS
-    void add_product (Product const &product, unsigned int quantity);
-    void delete_product (Product const &product, unsigned int quantity);
+    void add_product (const shared_ptr<Product> product, unsigned int quantity);
+    void remove_product (const shared_ptr<Product> product, unsigned int quantity);
     void list_products();
 };
 

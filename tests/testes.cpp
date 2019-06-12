@@ -20,7 +20,9 @@ TEST_CASE("Test Cart Creation") {
 
 TEST_CASE("Cart testing") {
     Client cliente_1 = Client("John Snow", "jsn", "8888!!!@@##$%*");
-    cliente_1.add_product(Clothes("tipo", "marca", "cor", "tamanho", 2.0, 1), 1);
+    auto roupa = make_shared<Clothes>("tipo", "marca", "cor", "tamanho", 2.0, 1);
+//    shared_ptr<Clothes> roupa = Clothes("tipo", "marca", "cor", "tamanho", 2.0, 1);
+    cliente_1.add_product(roupa, 1);
     cliente_1.list_products();
 }
 
@@ -49,7 +51,7 @@ TEST_CASE("Test User Creation") {
 }
 
 TEST_CASE("Test Product Creation") {
-    CHECK_NOTHROW(Product(5.0, 2, "cor", "tamanho", "marca"));
+  //  CHECK_NOTHROW(Product(5.0, 2, "cor", "tamanho", "marca"));
 }
 
 TEST_CASE("Test Clothes Creation") {

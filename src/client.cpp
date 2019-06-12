@@ -16,28 +16,37 @@ string Client::get_password(){
 }
 
 //MAP FUNCTIONS
-void Client::add_product (Product const &product, unsigned int quantity){
-    if (this->cart.find(product) == this->cart.end()){
-        this->cart[product] = quantity;
+void Client::add_product (const shared_ptr<Product> product, unsigned int quantity){
+    
+    map<shared_ptr<Product>, unsigned int>::iterator it = cart.find(product);
+    
+    if (it != cart.end()){
+        it->second += quantity;
+        return;
     }
     else {
-        this->cart[product] += quantity;
+        cart.insert(pair<shared_ptr<Product>, unsigned int>(product, quantity));
     }
 }
+
 //NEED ERROR HANDLING!!
-void Client::delete_product (Product const &product, unsigned int quantity){
-    this->cart[product] -= quantity;
+void Client::remove_product (const shared_ptr<Product> product, unsigned int quantity){
+    map<shared_ptr<Product>, unsigned int>::iterator it = cart.find(product);
+
+    if (it != cart.end()){
+        it->second -= quantity;
+        if (it->second > 0){
+            return;
+        }
+    }
+    cart.erase(it); 
+
 }
 void Client::list_products(){
-    map<Product, unsigned int>::iterator it;
+    map<shared_ptr<Product>, unsigned int>::iterator it;
 
     cout << "Seu Carrinho" << endl;
-    for ( it = this->cart.begin(); it != this->cart.end(); it++ )
-    {
-        it->first.print();
-        std::cout << "Qtd no estoque: " << it->second
-                  << endl ;
-    }
+    for (auto& i : cart) i.first->print();
 }
 
 //METHODS
