@@ -1,10 +1,10 @@
 # Trabalho Prático PDS2
-
+---
 ## Tema: e-commerce
 
 ## Introdução
 
-Projeto final da disciplina de Programação e Desenvolvimento de Software II (DCC204) da UFMG em 2019/1.
+Projeto final da disciplina de *Programação e Desenvolvimento de Software II (DCC204)* da UFMG em 2019/1.
 
 ### Integrantes
 
