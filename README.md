@@ -14,7 +14,7 @@ Projeto final da disciplina de Programação e Desenvolvimento de Software II (D
 - Rafael Mendonca (@rfm2018)
 - Vitor Mafra (@vitor-mafra)
 
-> Professor: Flávio Figueiredo
+> Professores: Flávio Figueiredo e Júlio César
 
 ### User Stories
 
