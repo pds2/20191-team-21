@@ -13,7 +13,7 @@ Product::Product(double price, string type, string color, string brand, unsigned
     this->_color = std::move(color);
     this->_type = std::move(type);
     this->_quantity = std::move(quantity);
-};
+}
 
 //SETTERS
 void Product::set_type(string type) {
@@ -30,7 +30,12 @@ void Product::set_color(string color) {
 
 void Product::set_price(double price){
     this->_price = price;
-};
+}
+
+void Product::set_quantity(unsigned int quantity){
+    this->_quantity = quantity;
+}
+
 void Product::update_quantity(unsigned int add){
     this->_quantity += add;
 }
@@ -54,6 +59,11 @@ string Product::get_color() const {
 unsigned int Product::get_quantity() const {
     return this->_quantity;
 }
+
+string Product::get_id() const {
+    return this->_product_id;
+}
+
 
 //OPERATORS
 

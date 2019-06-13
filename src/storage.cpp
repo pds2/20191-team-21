@@ -2,15 +2,11 @@
 
 Storage::Storage() {}
 
-
-// Storage::Storage(string file_address) {}
-
-
 void Storage::add_product(string product_id, shared_ptr<Product> product){
-    map<string, shared_ptr<Product>>::iterator i = _storage.find(product_id);
+    map<string, shared_ptr<Product>>::iterator i = this->_storage.find(product_id);
 
     if (i != _storage.end()){
-        _storage[product_id]->update_quantity(product->get_quantity);
+        i->second->update_quantity(product->get_quantity());
         return;
     }
     else {
@@ -18,22 +14,32 @@ void Storage::add_product(string product_id, shared_ptr<Product> product){
     }
 }
 
-void Storage::remove_product(map<string, shared_ptr<Product>>::iterator product_tuple) {
-    _storage.erase(product_tuple);
+map<string, shared_ptr<Product>>::iterator Storage::get_product_tuple (string product_id) {
+    map<string, shared_ptr<Product>>::iterator i = this->_storage.find(product_id);
+
+    return i;
 }
 
 void Storage::remove_product(string product_id) {
-    shared_ptr<Product> p = Storage::get_product (product_id);
-    map<string, shared_ptr<Product>>::iterator  i = Storage::find_tuple(p);
-
+    map<string, shared_ptr<Product>>::iterator i = Storage::get_product_tuple(product_id);
     _storage.erase(i);
 }
 
-map<string, shared_ptr<Product>>::iterator Storage::find_tuple (const shared_ptr<Product> product) const {
+shared_ptr<Product> Storage::get_product(string product_id) const{
     for (auto& i : _storage) {
-        if (i.second == product){
-            break;
+        if (i.first == product_id){
+            return i.second;
         }
     }
-    return i;
+    return NULL;
+}
+
+void Storage::list_products() const {
+    map<shared_ptr<Product>, unsigned int>::iterator it;
+    cout << "#############################" << endl
+         << "########  PRODUTOS   ########" << endl
+         << "#############################" << endl << endl << endl;
+
+    for (auto& i : this->_storage) i.second->print();
+    cout << "#############################" << endl;
 }

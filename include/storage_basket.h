@@ -1,15 +1,15 @@
-#ifndef BASKET_STORAGE_H_PDS
-#define BASKET_STORAGE_H_PDS
+#ifndef STORAGE_BASKET_H_PDS
+#define STORAGE_BASKET_H_PDS
 
 #include "storage.h"
 
 class Basket : public Storage {
-private:
-    double _total_price;
 
 public:
     Basket();
-    void calculate_total_price();
+    double get_total_price() const;
+
+    void view_basket() const;
 };
 
 #endif //STORAGE_BASKET_H_PDS

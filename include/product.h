@@ -26,15 +26,13 @@ public:
 //CONSTRUCTOR
     Product(double price, string type, string color, string brand, unsigned int quantity);
 
-
 //SETTERS
     void set_price(double price);
     void set_type(string type);
     void set_color(string color);
     void set_brand(string brand);
+    void set_quantity(unsigned int quantity);
     void update_quantity(unsigned int add);
-
-
 
 //GETTERS
     double get_price() const;
@@ -42,6 +40,7 @@ public:
     string get_color() const;
     string get_brand() const;
     unsigned int get_quantity() const;
+    string get_id() const;
 
 //OPERATORS
     bool operator>(const Product &product) const;

@@ -1,13 +1,11 @@
-#include <utility>
-
 #ifndef USER_H_PDS
 #define USER_H_PDS
 
+#include <utility>
 #include <iostream>
 #include <string>
 #include <fstream>
 #include "product.h"
-#include "cart.h"
 
 using namespace std;
 

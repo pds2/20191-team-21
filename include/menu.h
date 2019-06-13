@@ -1,12 +1,12 @@
 // #ifndef MENU_H_PDS
 // #define MENU_H_PDS
 // 
-// #include "administrator.h"
-// #include "client.h"
+// #include "user_admin.h"
+// #include "user_client.h"
 // #include "cart.h"
-// #include "clothes.h"
-// #include "shoes.h"
-// #include "sunglasses.h"
+// #include "product_clothes.h"
+// #include "product_shoes.h"
+// #include "product_sunglasses.h"
 // 
 // const int ACCESS_KEY = 12345;
 // 
