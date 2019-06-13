@@ -6,8 +6,8 @@
 Projeto final da disciplina de **Programação e Desenvolvimento de Software II (DCC204)** da **UFMG** em 2019/1.
 ## Tema: e-commerce
 
-|[Motivação]    |[Integrantes]   |[Documentação]  |[User Stories]  |[Como usar]  |
-| --------- |----------- |----------- |----------- |----------|
+| [Motivação] | [Integrantes] | [Documentação] | [User Stories] | [Como usar] |
+| ----------- | ------------- | -------------- | -------------- | ----------- |
 
 (a tabela acima terá links , como os que o Flávio usou no repositório da matéria)
 
