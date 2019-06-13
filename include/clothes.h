@@ -19,11 +19,11 @@ public:
     void set_price(double price) override;
 
     //GETTERS
-    double get_price() override;
-    string get_type() override;
-    string get_brand() override;
-    string get_color() override;
-    string get_size();
+    double get_price() const override;
+    string get_type() const override;
+    string get_brand() const override;
+    string get_color() const override;
+    string get_size() const;
 
     //OPERATORS
     bool operator<(const Clothes &clothes) const;

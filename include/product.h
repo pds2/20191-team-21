@@ -33,10 +33,10 @@ public:
     virtual void set_brand(string brand);
 
 //GETTERS
-    virtual double get_price();
-    virtual string get_type();
-    virtual string get_color();
-    virtual string get_brand();
+    virtual double get_price() const;
+    virtual string get_type() const;
+    virtual string get_color() const;
+    virtual string get_brand() const;
 
 //OPERATORS
     bool operator>(const Product &product) const;
