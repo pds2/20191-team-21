@@ -7,19 +7,20 @@
 #include <memory>
 
 class Storage {
-    map<shared_ptr<Product>, unsigned int> _storage;
+protected:
+    map<string, shared_ptr<Product>> _storage;
 public:
-    Storage() {};
-    Storage(string file_address);
+    Storage();
+
+//    Storage(string file_address);
     // MAP FUNCTIONS
-    virtual void add_product(string product) = 0;
-    virtual void add_product (const shared_ptr<Product> product, unsigned int quantity) = 0;
+    void add_product(string product_id, shared_ptr<Product> product);
+    void remove_product(map<string, shared_ptr<Product>>::iterator product_tuple);
+    void remove_product(string product_id);
+    map<string, shared_ptr<Product>>::iterator find_tuple (const shared_ptr<Product> product) const;
 
-    virtual void remove_product(string product) = 0;
-    virtual void remove_product (const shared_ptr<Product> product, unsigned int quantity) = 0;
-
-
-    virtual void list_products() const = 0;
+    virtual void list_products() const;
 };
 
 #endif //STORAGE_H_PDS
+

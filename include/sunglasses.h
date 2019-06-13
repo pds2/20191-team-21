@@ -9,7 +9,7 @@ class Sunglasses : public Product {
 
 public:
     //CONSTRUCTOR
-    Sunglasses(string type, string brand, string color, double price);
+    Sunglasses(string type, string brand, string color, double price, unsigned int quantity);
 
     //SETTERS
     void set_type(string type) override;

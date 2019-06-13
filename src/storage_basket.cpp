@@ -1,5 +1,12 @@
 #include "storage_basket.h"
 
-Basket::Basket(string str) {}
-void Basket::add_product (string product_id) {}
-void Basket::remove_product (string product_id) {}
+Basket::Basket(){
+
+}
+
+void Basket::calculate_total_price(){
+    _total_price = 0.0;
+    for (auto& i : _storage) {
+        _total_price += i.second->get_price();
+    }
+}

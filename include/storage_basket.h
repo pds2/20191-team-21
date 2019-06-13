@@ -4,9 +4,12 @@
 #include "storage.h"
 
 class Basket : public Storage {
-    Basket(string file_address);
-    void add_product (string product_id) override;
-    void remove_product (string product_id) override;
+private:
+    double _total_price;
+
+public:
+    Basket();
+    void calculate_total_price();
 };
 
 #endif //STORAGE_BASKET_H_PDS

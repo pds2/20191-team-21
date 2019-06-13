@@ -4,8 +4,8 @@
 
 
 //CONSTRUCTOR
-Clothes::Clothes(string type, string brand, string color, string size, double price)
-        : Product(price, std::move(type), std::move(color), std::move(brand)) {
+Clothes::Clothes(string type, string brand, string color, string size, double price, unsigned int quantity)
+        : Product(price, move(type), move(color), move(brand), move(quantity)) {
             transform(size.begin(), size.end(), size.begin(), ::toupper);
             this->_product_id = ID_CLOTHES + this->_product_id + size;
 }

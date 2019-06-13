@@ -22,21 +22,26 @@ public:
     string _type;
     string _color;
     string _brand;
+    unsigned int _quantity;
 //CONSTRUCTOR
-    Product(double price, string type, string color, string brand);
+    Product(double price, string type, string color, string brand, unsigned int quantity);
 
 
 //SETTERS
-    virtual void set_price(double price);
-    virtual void set_type(string type);
-    virtual void set_color(string color);
-    virtual void set_brand(string brand);
+    void set_price(double price);
+    void set_type(string type);
+    void set_color(string color);
+    void set_brand(string brand);
+    void update_quantity(unsigned int add);
+
+
 
 //GETTERS
-    virtual double get_price() const;
-    virtual string get_type() const;
-    virtual string get_color() const;
-    virtual string get_brand() const;
+    double get_price() const;
+    string get_type() const;
+    string get_color() const;
+    string get_brand() const;
+    unsigned int get_quantity() const;
 
 //OPERATORS
     bool operator>(const Product &product) const;

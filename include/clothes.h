@@ -9,7 +9,7 @@ private:
 
 public:
     //CONSTRUCTOR
-    Clothes(string type, string brand, string color, string size, double price);
+    Clothes(string type, string brand, string color, string size, double price, unsigned int quantity);
 
     //SETTERS
     void set_type(string type) override;
