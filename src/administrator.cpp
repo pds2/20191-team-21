@@ -17,191 +17,315 @@ string Admin::get_password(){
 };
 
 
-//ATTRIBUTES
-void Admin::add_product_storage() {
+int Admin::choose_category() {
 
-    fstream clothes_strg, shoes_strg, sunglasses_strg;
-    string brand, type, color, size_c;
-		string search_brand, search_type, search_color, search_size_c;
-		int size_s, search_quantity, search_size_s;
-    int quantity, category;
-		double price, search_price;
+	int category;
 
-    bool add_product = true;
-		bool product_exists = false;
+  cout << "Selecione a categoria do produto que voce deseja adicionar"
+	<< endl << "1 - Roupa" << endl << "2 - Sapato" << endl <<
+	"3 - Oculos de sol" << endl << "Digite 4 para voltar" << endl;
+  cin >> category;
+	cout << endl;
 
+	return category;
 
-    while(add_product) {
-
-    	cout << "Selecione a categoria do produto que voce deseja adicionar"
-	    << endl << "1 - Roupa" << endl << "2 - Sapato" << endl <<
-  	  "3 - Oculos de sol" << endl << "Digite 4 para voltar" << endl;
-    	cin >> category;
-	    cout << endl;
-
-	    switch(category) {
-
-  	    case 1:
-          cout << "Tipo do produto: ";
-          cin >> type;
-        	cout << "Marca: ";
-        	cin >> brand;
-          cout << "Cor: ";
-          cin >> color;
-          cout << "Tamanho: ";
-          cin >> size_c;
-					cout << "Quantidade: ";
-          cin >> quantity;
-          cout << "Preco: ";
-          cin >> price;
-					cout << endl;
-
-    	    clothes_strg.open("storage-clothes.txt", ios::in);
-      	  while(!clothes_strg.eof()) {
-						clothes_strg >> search_type >> search_brand >> search_color
-						>> search_size_c >> search_quantity >> search_price;
-
-						//le todas as linhas do arquivo e procura o produto escolhido
-						if(search_type == type) {
-							if(search_brand == brand) {
-								if(search_color == color) {
-									if(search_size_c == size_c) {
-										product_exists = true;
-									}
-								}
-							}
-						}
-					}
-					clothes_strg.close();
-
-					if(product_exists)
-						cout << "Esse produto ja existe no estoque." << endl << endl;
-					else{
-
-						Clothes new_clothes(type, brand, color, size_c, quantity, price);
-
-						//abre o arquivo no mode de gravacao no fim do arquivo
-						clothes_strg.open("storage-clothes.txt", ios::out | ios::app);
-						clothes_strg << endl << new_clothes.get_type() << " " << new_clothes.get_brand()
-						<< " " << new_clothes.get_color() << " " << new_clothes.get_size() << " " <<
-						new_clothes.get_quantity() << " " << new_clothes.get_price();
-
-						cout << "Produto adicionado ao estoque com sucesso." << endl << endl;
-
-					}
-					clothes_strg.close();
-					break;
-
-				case 2:
-          cout << "Tipo do produto: ";
-          cin >> type;
-        	cout << "Marca: ";
-        	cin >> brand;
-          cout << "Cor: ";
-          cin >> color;
-          cout << "Tamanho: ";
-          cin >> size_s;
-					cout << "Quantidade: ";
-          cin >> quantity;
-          cout << "Preco: ";
-          cin >> price;
-					cout << endl;
-
-    	    shoes_strg.open("storage-shoes.txt", ios::in);
-      	  while(!shoes_strg.eof()) {
-						shoes_strg >> search_type >> search_brand >> search_color
-						>> search_size_s >> search_quantity >> search_price;
-
-						if(search_type == type) {
-							if(search_brand == brand) {
-								if(search_color == color) {
-									if(search_size_s == size_s) {
-										product_exists = true;
-									}
-								}
-							}
-						}
-					}
-					shoes_strg.close();
-
-					if(product_exists)
-						cout << "Esse produto ja existe no estoque." << endl << endl;
-					else{
-
-						Shoes new_shoes(type, brand, color, size_s, quantity, price);
-
-						//abre o arquivo no mode de gravacao no fim do arquivo
-						shoes_strg.open("storage-shoes.txt", ios::out | ios::app);
-						shoes_strg << endl << new_shoes.get_type() << " " << new_shoes.get_brand()
-						<< " " << new_shoes.get_color() << " " << new_shoes.get_size() << " " <<
-						new_shoes.get_quantity() << " " << new_shoes.get_price();
-
-						cout << "Produto adicionado ao estoque com sucesso." << endl << endl;
-
-					}
-					shoes_strg.close();
-					break;
-
-				case 3:
-        	cout << "Marca do produto: ";
-        	cin >> brand;
-          cout << "Cor: ";
-          cin >> color;
-					cout << "Quantidade: ";
-          cin >> quantity;
-          cout << "Preco: ";
-          cin >> price;
-					cout << endl;
-
-    	    sunglasses_strg.open("storage-sunglasses.txt", ios::in);
-      	  while(!sunglasses_strg.eof()) {
-						sunglasses_strg >> search_brand >> search_color
-						>> search_quantity >> search_price;
-
-						if(search_brand == brand && search_color == color) {
-								product_exists = true;
-							}
-					}
-					sunglasses_strg.close();
-
-					if(product_exists)
-						cout << "Esse produto ja existe no estoque." << endl << endl;
-					else{
-
-						Sunglasses new_sunglasses(brand, color, quantity, price);
-
-						//abre o arquivo no mode de gravacao no fim do arquivo
-						sunglasses_strg.open("storage-sunglasses.txt", ios::out | ios::app);
-						sunglasses_strg << endl << new_sunglasses.get_brand() << " " <<
-						new_sunglasses.get_color() << " " << new_sunglasses.get_quantity()
-						<< " " << new_sunglasses.get_price();
-
-						cout << "Produto adicionado ao estoque com sucesso." << endl << endl;
-
-					}
-					sunglasses_strg.close();
-					break;
-
-				case 4:
-					add_product = false;
-					break;
-
-				default:
-					cout << "Comando invalido" << endl << endl;
-					break;
-
-    	}
-		}
 }
 
+
+void Admin::case_clothes_add(string *type, string *brand, string *color,
+														string *size_c, int *quantity, double *price) {
+
+	string _type, _brand, _color, _size_c;
+	int _quantity;
+	double _price;
+
+	cout << "Tipo do produto: ";
+  cin >> _type;
+	*type = std::move(_type);
+  cout << "Marca: ";
+  cin >> _brand;
+	*brand = std::move(_brand);
+  cout << "Cor: ";
+  cin >> _color;
+	*color = std::move(_color);
+  cout << "Tamanho: ";
+  cin >> _size_c;
+	*size_c = std::move(_size_c);
+	cout << "Quantidade: ";
+	cin >> _quantity;
+	*quantity = _quantity;
+  cout << "Preco: ";
+  cin >> _price;
+	*price = _price;
+	cout << endl;
+
+}
+
+
+bool Admin::search_clothes(string type, string brand, string color,
+													string size_c, int quantity, double price) {
+
+	fstream clothes_strg;
+	string search_type, search_brand, search_color, search_size_c;
+	int search_quantity;
+	double search_price;
+	bool product_exists = false;
+
+  clothes_strg.open("storage-clothes.txt", ios::in);
+  while(!clothes_strg.eof()) {
+		clothes_strg >> search_type >> search_brand >> search_color
+		>> search_size_c >> search_quantity >> search_price;
+
+		//le todas as linhas do arquivo e procura o produto escolhido
+		if(search_type == type) {
+			if(search_brand == brand) {
+				if(search_color == color) {
+					if(search_size_c == size_c) {
+						product_exists = true;
+					}
+				}
+			}
+		}
+	}
+	clothes_strg.close();
+
+	return product_exists;
+}
+
+
+void Admin::add_clothes(string type, string brand, string color,
+												string size_c, int quantity, double price) {
+
+	fstream clothes_strg;
+	Clothes new_clothes(type, brand, color, size_c, quantity, price);
+
+	//abre o arquivo no mode de gravacao no fim do arquivo
+	clothes_strg.open("storage-clothes.txt", ios::out | ios::app);
+	clothes_strg << endl << new_clothes.get_type() << " " << new_clothes.get_brand()
+	<< " " << new_clothes.get_color() << " " << new_clothes.get_size() << " " <<
+	new_clothes.get_quantity() << " " << new_clothes.get_price();
+
+	cout << "Produto adicionado ao estoque com sucesso." << endl << endl;
+
+	clothes_strg.close();
+
+}
+
+
+void Admin::case_shoes_add(string *type, string *brand, string *color, int *size_s, int *quantity, double *price) {
+
+	string _type, _brand, _color;
+	int _quantity, _size_s;
+	double _price;
+
+	cout << "Tipo do produto: ";
+  cin >> _type;
+	*type = std::move(_type);
+  cout << "Marca: ";
+  cin >> _brand;
+	*brand = std::move(_brand);
+  cout << "Cor: ";
+  cin >> _color;
+	*color = std::move(_color);
+  cout << "Tamanho: ";
+  cin >> _size_s;
+	*size_s = _size_s;
+	cout << "Quantidade: ";
+	cin >> _quantity;
+	*quantity = _quantity;
+  cout << "Preco: ";
+  cin >> _price;
+	*price = _price;
+	cout << endl;
+
+}
+
+
+bool Admin::search_shoes(string type, string brand, string color,
+												int size_s, int quantity, double price) {
+
+	fstream shoes_strg;
+	string search_type, search_brand, search_color;
+	int search_quantity, search_size_s;
+	double search_price;
+	bool product_exists = false;
+
+
+  shoes_strg.open("storage-shoes.txt", ios::in);
+  while(!shoes_strg.eof()) {
+	shoes_strg >> search_type >> search_brand >> search_color
+	>> search_size_s >> search_quantity >> search_price;
+
+		if(search_type == type) {
+			if(search_brand == brand) {
+				if(search_color == color) {
+					if(search_size_s == size_s) {
+						product_exists = true;
+					}
+				}
+			}
+		}
+	}
+	shoes_strg.close();
+
+	return product_exists;
+
+}
+
+//void Admin::add_shoes();
+
+void Admin::case_sunglasses_add(string *brand, string* color, int* quantity, double* price){
+	cout << "Marca do produto: ";
+	string _brand, _color;
+	int _quantity;
+	double _price;
+  
+	cin >> _brand;
+	*brand = std::move(_brand);
+  cout << "Cor: ";
+  cin >> _color;
+	*color = std::move(_color);
+	cout << "Quantidade: ";
+  cin >> _quantity;
+	*quantity = _quantity;
+  cout << "Preco: ";
+  cin >> _price;
+	*price = _price;
+	cout << endl;
+
+}
+
+//bool Admin::search_sunglasses()
+
+//void Admin::add_sunglasses()
+
+void Admin::add_product_storage() {
+
+  fstream clothes_strg, shoes_strg, sunglasses_strg;
+  string brand, type, color, size_c;
+	string search_brand, search_type, search_color;
+	int size_s, search_quantity;
+  int quantity;
+	double price, search_price;
+
+  bool add_product = true;
+	bool product_exists = false;
+
+
+  while(add_product) {
+
+	  switch(Admin::choose_category()) {
+
+  	  case 1:
+				Admin::case_clothes_add(&type, &brand, &color, &size_c, &quantity, &price);
+
+				if(Admin::search_clothes(type, brand, color, size_c, quantity, price))
+					cout << "Esse produto ja existe no estoque." << endl << endl;
+				else{
+					Admin::add_clothes(type, brand, color, size_c, quantity, price);
+				}
+				break;
+
+			case 2:
+        Admin::case_shoes_add(&type, &brand, &color, &size_s, &quantity, &price);
+
+				if(Admin::search_shoes(type, brand, color, size_s, quantity, price))
+					cout << "Esse produto ja existe no estoque." << endl << endl;
+				else{
+
+					Shoes new_shoes(type, brand, color, size_s, quantity, price);
+
+					//abre o arquivo no mode de gravacao no fim do arquivo
+					shoes_strg.open("storage-shoes.txt", ios::out | ios::app);
+					shoes_strg << endl << new_shoes.get_type() << " " << new_shoes.get_brand()
+					<< " " << new_shoes.get_color() << " " << new_shoes.get_size() << " " <<
+					new_shoes.get_quantity() << " " << new_shoes.get_price();
+
+					cout << "Produto adicionado ao estoque com sucesso." << endl << endl;
+
+				}
+				shoes_strg.close();
+				break;
+
+			case 3:
+       	Admin::case_sunglasses_add(&brand, &color, &quantity, &price);
+
+    	  sunglasses_strg.open("storage-sunglasses.txt", ios::in);
+        while(!sunglasses_strg.eof()) {
+				sunglasses_strg >> search_brand >> search_color
+				>> search_quantity >> search_price;
+
+					if(search_brand == brand && search_color == color) {
+						product_exists = true;
+					}
+				}
+				sunglasses_strg.close();
+
+				if(product_exists)
+					cout << "Esse produto ja existe no estoque." << endl << endl;
+				else{
+
+					Sunglasses new_sunglasses(brand, color, quantity, price);
+
+					//abre o arquivo no mode de gravacao no fim do arquivo
+					sunglasses_strg.open("storage-sunglasses.txt", ios::out | ios::app);
+					sunglasses_strg << endl << new_sunglasses.get_brand() << " " <<
+					new_sunglasses.get_color() << " " << new_sunglasses.get_quantity()
+					<< " " << new_sunglasses.get_price();
+
+					cout << "Produto adicionado ao estoque com sucesso." << endl << endl;
+
+				}
+				sunglasses_strg.close();
+				break;
+
+			case 4:
+				add_product = false;
+				break;
+
+			default:
+				cout << "Comando invalido" << endl << endl;
+				break;
+
+    }
+	}
+}
+
+
+void Admin::case_clothes_qt(string *type, string *brand, string *color, string *size_c, int *new_quantity){
+	string _type, _brand, _color, _size_c;
+	int _new_quantity;
+				cout << "Tipo do produto: ";
+				cin >> _type;
+				*type = std::move(_type);
+				cout << "Marca: ";
+				cin >> _brand;
+				*brand = std::move(_brand);
+				cout << "Cor: ";
+				cin >> _color;
+				*color = std::move(_color);
+				cout << "Tamanho: ";
+				cin >> _size_c;
+				*size_c = _size_c;
+				cout << "Insira a nova quantidade: ";
+				cin >> _new_quantity;
+				*new_quantity = _new_quantity;
+
+				/*//excecao
+				if(new_price <= 0) {
+	  			cout << endl << "Preco invalido." << endl << endl
+	  			;
+	  			break;
+		}*/
+	}
 
 void Admin::change_product_quantity() {
 
   fstream clothes_strg, shoes_strg, sunglasses_strg;
   string type, brand, color, size_c;
 	string search_type, search_brand, search_color, search_size_c;
-	int quantity, new_quantity, category, search_size_s, size_s;
-  double price;
+	int search_quantity, new_quantity, search_size_s, size_s;
+  double search_price;
 
   bool product_exists = false;
   bool change_menu = true;
@@ -215,38 +339,22 @@ void Admin::change_product_quantity() {
   vector<double> prices;
 
   while(change_menu) {
-    cout << "Qual a categoria do produto que tera a quantidade alterada?"
-    << endl << "1 - Roupa" << endl << "2 - Sapato" << endl << "3 - Oculos de sol"
-    << endl << "Digite 4 para voltar" << endl;
-    cin >>  category;
-		cout << endl;
 
-    switch(category) {
+    switch(Admin::choose_category()) {
 
 			case 1:
 			{
-				cout << "Tipo do produto: ";
-				cin >> search_type;
-				cout << "Marca: ";
-				cin >> search_brand;
-				cout << "Cor: ";
-				cin >> search_color;
-				cout << "Tamanho: ";
-				cin >> search_size_c;
-				cout << "Insira a nova quantidade: ";
-				cin >> new_quantity;
+				Admin::case_clothes_qt(&type, &brand, &color, &size_c, &new_quantity);
 
-				if(new_quantity < 0) {
-	  			cout << endl << "Quantidade invalida." << endl << endl;
-	  			break;
-				}
 
+//search_clothes_qt
 				int aux = 0;
 
 				//abre com ios::in pois sera apenas leitura
 				clothes_strg.open("storage-clothes.txt", ios::in);
 				while(!clothes_strg.eof()) {
-	  			clothes_strg >> type >> brand >> color >> size_c >> quantity >> price;
+	  			clothes_strg >> search_type >> search_brand >> search_color >>
+					search_size_c >> search_quantity >> search_price;
 
 
           if(type == search_type) {
@@ -265,25 +373,27 @@ void Admin::change_product_quantity() {
 					else aux++;
 
 	  			if(aux == 0) {
-						types.push_back(type);
-		  			brands.push_back(brand);
-		  			colors.push_back(color);
-		  			sizes_c.push_back(size_c);
+						types.push_back(search_type);
+		  			brands.push_back(search_brand);
+		  			colors.push_back(search_color);
+		  			sizes_c.push_back(search_size_c);
 		  			quantities.push_back(new_quantity);
-		  			prices.push_back(price);
+		  			prices.push_back(search_price);
 					}
 					else {
-	    			types.push_back(type);
-	    			brands.push_back(brand);
-	    			colors.push_back(color);
-	    			sizes_c.push_back(size_c);
-	    			quantities.push_back(quantity);
-	    			prices.push_back(price);
+	    			types.push_back(search_type);
+	    			brands.push_back(search_brand);
+	    			colors.push_back(search_color);
+	    			sizes_c.push_back(search_size_c);
+	    			quantities.push_back(search_quantity);
+	    			prices.push_back(search_price);
 						aux = 0;
 	  			}
 				}
 				clothes_strg.close();
 
+
+//change_clothes_qt
 				int s = types.size();
 
 				if(!product_exists)
@@ -322,28 +432,33 @@ void Admin::change_product_quantity() {
 
       case 2:
 			{
+//void case_shoes_qt();
 				cout << "Tipo do produto: ";
-				cin >> search_type;
+				cin >> type;
 				cout << "Marca: ";
-				cin >> search_brand;
+				cin >> brand;
 				cout << "Cor: ";
-				cin >> search_color;
+				cin >> color;
 				cout << "Tamanho: ";
-				cin >> search_size_s;
+				cin >> size_s;
 				cout << "Insira a nova quantidade: ";
 				cin >> new_quantity;
 
+//excecao
 				if(new_quantity < 0) {
 	  			cout << endl << "Quantidade invalida." << endl << endl;
 	  			break;
 				}
 
+
+//search_shoes_qt
 				int aux = 0;
 
 				//abre com ios::in pois sera apenas leitura
 				shoes_strg.open("storage-shoes.txt", ios::in);
 				while(!shoes_strg.eof()) {
-	  			shoes_strg >> type >> brand >> color >> size_s >> quantity >> price;
+	  			shoes_strg >> search_type >> search_brand >> search_color >>
+					search_size_s >> search_quantity >> search_price;
 
 	  			//se for o produto procurado, adiciona new_quantity no lugar da antiga quantidade
           if(type == search_type) {
@@ -362,25 +477,27 @@ void Admin::change_product_quantity() {
 					else aux++;
 
 	  			if(aux == 0) {
-	    			types.push_back(type);
-	    			brands.push_back(brand);
-	    			colors.push_back(color);
-	    			sizes_s.push_back(size_s);
+	    			types.push_back(search_type);
+	    			brands.push_back(search_brand);
+	    			colors.push_back(search_color);
+	    			sizes_s.push_back(search_size_s);
 	  	  		quantities.push_back(new_quantity);
-		    		prices.push_back(price);
+		    		prices.push_back(search_price);
 		  			}
 					else {
-		  			types.push_back(type);
-		  			brands.push_back(brand);
-			  		colors.push_back(color);
-			  		sizes_s.push_back(size_s);
-			  		quantities.push_back(quantity);
-		  			prices.push_back(price);
+		  			types.push_back(search_type);
+		  			brands.push_back(search_brand);
+			  		colors.push_back(search_color);
+			  		sizes_s.push_back(search_size_s);
+			  		quantities.push_back(search_quantity);
+		  			prices.push_back(search_price);
 						aux = 0;
 					}
 				}
 			shoes_strg.close();
 
+
+//change_shoes_qt
 			int s = types.size();
 
 				if(!product_exists)
@@ -417,24 +534,28 @@ void Admin::change_product_quantity() {
 
       case 3:
 			{
+//void case_sunglasses_qt()
 				cout << "Marca do produto: ";
-				cin >> search_brand;
+				cin >> brand;
 				cout << "Cor: ";
-				cin >> search_color;
+				cin >> color;
 				cout << "Insira a nova quantidade: ";
 				cin >> new_quantity;
-
+//excecao
 				if(new_quantity < 0) {
 	  			cout << endl << "Quantidade invalida." << endl << endl;
 	  			break;
 				}
 
+
+//search - arqv
 				int aux = 0;
 
 				//abre com ios::in pois sera apenas leitura
 				sunglasses_strg.open("storage-sunglasses.txt", ios::in);
 				while(!sunglasses_strg.eof()) {
-	  			sunglasses_strg >> brand >> color >> quantity >> price;
+	  			sunglasses_strg >> search_brand >> search_color >> search_quantity >>
+					search_price;
 
           if(brand == search_brand) {
             if(color == search_color) {
@@ -446,21 +567,23 @@ void Admin::change_product_quantity() {
 					else aux++;
 
 					if(aux == 0) {
-	    			brands.push_back(brand);
-	    			colors.push_back(color);
+	    			brands.push_back(search_brand);
+	    			colors.push_back(search_color);
 	    			quantities.push_back(new_quantity);
-	    			prices.push_back(price);
+	    			prices.push_back(search_price);
 					}
 	  			else {
-    			  brands.push_back(brand);
-      			colors.push_back(color);
-      			quantities.push_back(quantity);
-      			prices.push_back(price);
+    			  brands.push_back(search_brand);
+      			colors.push_back(search_color);
+      			quantities.push_back(search_quantity);
+      			prices.push_back(search_price);
 						aux = 0;
 	  			}
 				}
 				sunglasses_strg.close();
 
+
+//change - arqv
 				int s = brands.size();
 
 				if(!product_exists)
@@ -507,13 +630,92 @@ void Admin::change_product_quantity() {
 }
 
 
+void Admin::case_clothes_prc(string *type, string *brand, string *color, string *size_c, double *new_price){
+	string _type, _brand, _color, _size_c;
+	double _new_price;
+
+	cout << "Tipo do produto: ";
+	cin >> _type;
+	*type = std::move(_type);
+	cout << "Marca: ";
+	cin >> _brand;
+	*brand = std::move(_brand);
+	cout << "Cor: ";
+	cin >> _color;
+	*color = std::move(_color);
+	cout << "Tamanho: ";
+	cin >> _size_c;
+	*size_c = _size_c;
+	cout << "Insira o novo preco: ";
+	cin >> _new_price;
+	*new_price = _new_price;
+
+	/*//excecao
+	if(new_price <= 0) {
+		cout << endl << "Preco invalido." << endl << endl;
+	  break;
+	}*/
+}
+
+
+void Admin::case_shoes_prc(string *type, string *brand, string *color, int *size_s, double *new_price){
+	string _type, _brand, _color, _size_c;
+	int _size_s;
+	double _new_price;
+
+	cout << "Tipo do produto: ";
+	cin >> _type;
+	*type = std::move(_type);
+	cout << "Marca: ";
+	cin >> _brand;
+	*brand = std::move(_brand);
+	cout << "Cor: ";
+	cin >> _color;
+	*color = std::move(_color);
+	cout << "Tamanho: ";
+	cin >> _size_s;
+	*size_s = _size_s;
+	cout << "Insira o novo preco: ";
+	cin >> _new_price;
+	*new_price = _new_price;
+
+/*/excecao
+	if(new_price <= 0) {
+		cout << endl << "Preco invalido." << endl << endl;
+		break;
+	}*/
+}
+
+
+void Admin::case_sunglasses_prc(string* brand, string* color, double* new_price){
+	string _brand, _color;
+	double _new_price;
+
+	cout << "Marca do produto: ";
+	cin >> _brand;
+	*brand = move(_brand);
+	cout << "Cor: ";
+	cin >> _color;
+	*color = move(_color);
+	cout << "Insira o novo preco: ";
+	cin >> _new_price;
+	*new_price = _new_price;
+
+//excecao
+/* if(new_price <= 0) {
+		cout << endl << "Preco invalido." << endl << endl;
+		break;
+	}*/
+}
+
+
 void Admin::change_product_price() {
 
   fstream clothes_strg, shoes_strg, sunglasses_strg;
   string type, brand, color, size_c;
 	string search_type, search_brand, search_color, search_size_c;
-	int quantity, category, size_s, search_size_s;
-  double price, new_price;
+	int search_quantity, size_s, search_size_s;
+  double search_price, new_price;
 
   bool product_exists = false;
   bool change_menu = true;
@@ -527,38 +729,24 @@ void Admin::change_product_price() {
   vector<double> prices;
 
   while(change_menu) {
-    cout << "Qual a categoria do produto que tera o preco alterado?"
-    << endl << "1 - Roupa" << endl << "2 - Sapato" << endl << "3 - Oculos de sol"
-    << endl << "Digite 4 para voltar" << endl;
-    cin >> category;
-		cout << endl;
 
-    switch(category) {
+
+    switch(Admin::choose_category()) {
 
       case 1:
 			{
-				cout << "Tipo do produto: ";
-				cin >> search_type;
-				cout << "Marca: ";
-				cin >> search_brand;
-				cout << "Cor: ";
-				cin >> search_color;
-				cout << "Tamanho: ";
-				cin >> search_size_c;
-				cout << "Insira o novo preco: ";
-				cin >> new_price;
 
-				if(new_price <= 0) {
-	  			cout << endl << "Preco invalido." << endl << endl;
-	  			break;
-				}
+				Admin::case_clothes_prc(&type, &brand, &color, &size_c, &new_price);
 
+
+//search - arqv
 				int aux = 0;
 
 				//abre com ios::in pois sera apenas leitura
 				clothes_strg.open("storage-clothes.txt", ios::in);
 				while(!clothes_strg.eof()) {
-	  			clothes_strg >> type >> brand >> color >> size_c >> quantity >> price;
+	  			clothes_strg >> search_type >> search_brand >> search_color >>
+					search_size_c >> search_quantity >> search_price;
 
           if(type == search_type) {
             if(brand == search_brand) {
@@ -576,25 +764,27 @@ void Admin::change_product_price() {
 					else aux++;
 
 					if(aux == 0) {
-						types.push_back(type);
-		  			brands.push_back(brand);
-						colors.push_back(color);
-	  				sizes_c.push_back(size_c);
-						quantities.push_back(quantity);
-	  				prices.push_back(new_price);						
+						types.push_back(search_type);
+		  			brands.push_back(search_brand);
+						colors.push_back(search_color);
+	  				sizes_c.push_back(search_size_c);
+						quantities.push_back(search_quantity);
+	  				prices.push_back(new_price);
 					}
 	  			else {
-	    			types.push_back(type);
-	    			brands.push_back(brand);
-	    			colors.push_back(color);
-	    			sizes_c.push_back(size_c);
-	    			quantities.push_back(quantity);
-				    prices.push_back(price);
+	    			types.push_back(search_type);
+	    			brands.push_back(search_brand);
+	    			colors.push_back(search_color);
+	    			sizes_c.push_back(search_size_c);
+	    			quantities.push_back(search_quantity);
+				    prices.push_back(search_price);
 	    			aux = 0;
 	  			}
 				}
 				clothes_strg.close();
 
+
+//change - arqv
 				int s = types.size();
 
 				if(!product_exists)
@@ -633,28 +823,17 @@ void Admin::change_product_price() {
 
       case 2:
 			{
-				cout << "Tipo do produto: ";
-				cin >> search_type;
-				cout << "Marca: ";
-				cin >> search_brand;
-				cout << "Cor: ";
-				cin >> search_color;
-				cout << "Tamanho: ";
-				cin >> search_size_s;
-				cout << "Insira o novo preco: ";
-				cin >> new_price;
+				Admin::case_shoes_prc(&type, &brand, &color, &size_s, &new_price);
 
-				if(new_price <= 0) {
-	  			cout << endl << "Preco invalido." << endl << endl;
-	  			break;
-				}
 
+//search - arqv
 				int aux = 0;
 
 				//abre com ios::in pois sera apenas leitura
 				shoes_strg.open("storage-shoes.txt", ios::in);
 				while(!shoes_strg.eof()) {
-	  			shoes_strg >> type >> brand >> color >> size_s >> quantity >> price;
+	  			shoes_strg >> search_type >> search_brand >> search_color >>
+					search_size_s >> search_quantity >> search_price;
 
           if(type == search_type) {
             if(brand == search_brand) {
@@ -672,25 +851,27 @@ void Admin::change_product_price() {
 					else aux++;
 
 					if(aux == 0) {
-						types.push_back(type);
-		  			brands.push_back(brand);
-		  			colors.push_back(color);
-						sizes_s.push_back(size_s);
-		  			quantities.push_back(quantity);
-		  			prices.push_back(new_price);						
+						types.push_back(search_type);
+		  			brands.push_back(search_brand);
+		  			colors.push_back(search_color);
+						sizes_s.push_back(search_size_s);
+		  			quantities.push_back(search_quantity);
+		  			prices.push_back(new_price);
 					}
 	  			else {
-	    			types.push_back(type);
-	    			brands.push_back(brand);
-	    			colors.push_back(color);
-	    			sizes_s.push_back(size_s);
-	    			quantities.push_back(quantity);
-	    			prices.push_back(price);
+	    			types.push_back(search_type);
+	    			brands.push_back(search_brand);
+	    			colors.push_back(search_color);
+	    			sizes_s.push_back(search_size_s);
+	    			quantities.push_back(search_quantity);
+	    			prices.push_back(search_price);
 	    			aux = 0;
 	  			}
 				}
 				shoes_strg.close();
 
+
+//change - arqv
 				int s = types.size();
 
 				if(!product_exists)
@@ -711,7 +892,7 @@ void Admin::change_product_price() {
 	  			}
 	  			shoes_strg.close();
 
-					cout << endl << "Preco alterado com sucesso." << endl << endl;					
+					cout << endl << "Preco alterado com sucesso." << endl << endl;
 				}
 
 				for(int i = s; i > 0; i--) {
@@ -729,24 +910,17 @@ void Admin::change_product_price() {
 
       case 3:
 			{
-				cout << "Marca do produto: ";
-				cin >> search_brand;
-				cout << "Cor: ";
-				cin >> search_color;
-				cout << "Insira o novo preco: ";
-				cin >> new_price;
+				Admin::case_sunglasses_prc(&brand, &color, &new_price);
 
-				if(new_price <= 0) {
-	  			cout << endl << "Preco invalido." << endl << endl;
-	  			break;
-				}
 
+//search - arqv
 				int aux = 0;
 
 				//abre com ios::in pois sera apenas leitura
 				sunglasses_strg.open("storage-sunglasses.txt", ios::in);
 				while(!shoes_strg.eof()) {
-	  			sunglasses_strg >> brand >> color >> quantity >> price;
+	  			sunglasses_strg >> search_brand >> search_color >> search_quantity
+					>> search_price;
 
           if(brand == search_brand) {
             if(color == search_color) {
@@ -758,21 +932,23 @@ void Admin::change_product_price() {
 					else aux++;
 
 					if(aux == 0) {
-						brands.push_back(brand);
-						colors.push_back(color);
-						quantities.push_back(quantity);
-						prices.push_back(new_price);						
+						brands.push_back(search_brand);
+						colors.push_back(search_color);
+						quantities.push_back(search_quantity);
+						prices.push_back(new_price);
 					}
 	  			else {
-	    			brands.push_back(brand);
-	    			colors.push_back(color);
-	    			quantities.push_back(quantity);
-	    			prices.push_back(price);
+	    			brands.push_back(search_brand);
+	    			colors.push_back(search_color);
+	    			quantities.push_back(search_quantity);
+	    			prices.push_back(search_price);
 	    			aux = 0;
 	  			}
 				}
 				sunglasses_strg.close();
 
+
+//change - arqv
 				int s = brands.size();
 
 				if(!product_exists)
@@ -824,8 +1000,8 @@ void Admin::remove_product() {
   fstream clothes_strg, shoes_strg, sunglasses_strg;
   string type, brand, color, size_c;
   string search_type, search_brand, search_color, search_size_c;
-  int size_s, quantity, search_size_s, category;
-  double price;
+  int size_s, search_quantity, search_size_s;
+  double search_price;
 
   bool product_exists = false;
   bool remove_menu = true;
@@ -838,33 +1014,31 @@ void Admin::remove_product() {
   vector<int> quantities;
   vector<double> prices;
 
-  cout << "Qual a categoria do produto que voce deseja remover?" << endl
-  << "1 - Roupa" << endl << "2 - Sapato" << endl << "3 - Oculos de sol"
-  << endl << "Digite 4 para voltar." << endl;
-  cin >> category;
-  cout << endl;
 
   while(remove_menu) {
 
-    switch(category) {
+    switch(Admin::choose_category()) {
 
       case 1:
 			{
+				//case
         cout << "Tipo do produto: ";
-        cin >> search_type;
+        cin >> type;
         cout << "Marca: ";
-        cin >> search_brand;
+        cin >> brand;
         cout << "Cor: ";
-        cin >> search_color;
+        cin >> color;
         cout << "Tamanho: ";
-        cin >> search_size_c;
+        cin >> size_c;
         cout << endl;
 
+//
 				int aux = 0;
 
         clothes_strg.open("storage-clothes.txt", ios::in);
         while(!clothes_strg.eof()) {
-	  			clothes_strg >> type >> brand >> color >> size_c >> quantity >> price;
+	  			clothes_strg >> search_type >> search_brand >> search_color >>
+					search_size_c >> search_quantity >> search_price;
 
           if(type == search_type) {
 	    			if(brand == search_brand) {
@@ -882,17 +1056,18 @@ void Admin::remove_product() {
 	  			else aux++;
 
 					if(aux != 0) {
-						types.push_back(type);
-		  			brands.push_back(brand);
-		  			colors.push_back(color);
-		  			sizes_c.push_back(size_c);
-		  			quantities.push_back(quantity);
-		  			prices.push_back(price);
+						types.push_back(search_type);
+		  			brands.push_back(search_brand);
+		  			colors.push_back(search_color);
+		  			sizes_c.push_back(search_size_c);
+		  			quantities.push_back(search_quantity);
+		  			prices.push_back(search_price);
 						aux = 0;
 					}
         }
 				clothes_strg.close();
 
+//
 				int s = types.size();
 
         if(!product_exists)
@@ -929,20 +1104,23 @@ void Admin::remove_product() {
 
       case 2:
 			{
+				//case
         cout << "Tipo do produto: ";
-        cin >> search_type;
+        cin >> type;
         cout << "Marca: ";
-        cin >> search_brand;
+        cin >> brand;
         cout << "Cor: ";
-        cin >> search_color;
+        cin >> color;
         cout << "Tamanho: ";
-        cin >> search_size_s;
+        cin >> size_s;
         cout << endl;
 
         shoes_strg.open("storage-shoes.txt", ios::in);
         while(!shoes_strg.eof()) {
-	  			shoes_strg >> type >> brand >> color >> size_s >> quantity >> price;
+	  			shoes_strg >> search_type >> search_brand >> search_color >> search_size_s
+					>> search_quantity >> search_price;
 
+//
 					int aux = 0;
 
 	  			if(type == search_type) {
@@ -961,17 +1139,18 @@ void Admin::remove_product() {
 					else aux++;
 
 					if(aux != 0) {
-						types.push_back(type);
-		  			brands.push_back(brand);
-		  			colors.push_back(color);
-		  			sizes_s.push_back(size_s);
-		  			quantities.push_back(quantity);
-		  			prices.push_back(price);
+						types.push_back(search_type);
+		  			brands.push_back(search_brand);
+		  			colors.push_back(search_color);
+		  			sizes_s.push_back(search_size_s);
+		  			quantities.push_back(search_quantity);
+		  			prices.push_back(search_price);
 						aux = 0;
 					}
         }
 				shoes_strg.close();
 
+//
 				int s = types.size();
 
         if(!product_exists)
@@ -1009,17 +1188,19 @@ void Admin::remove_product() {
 
       case 3:
 			{
+				//case
         cout << "Marca do produto: ";
-        cin >> search_brand;
+        cin >> brand;
         cout << "Cor: ";
-        cin >> search_color;
+        cin >> color;
         cout << endl;
 
+//
 				int aux = 0;
 
         sunglasses_strg.open("storage-sunglasses.txt", ios::in);
         while(!sunglasses_strg.eof()) {
-    			sunglasses_strg >> brand >> color >> quantity >> price;
+    			sunglasses_strg >> search_brand >> search_color >> search_quantity >> search_price;
 
 	    		if(brand == search_brand) {
 	      		if(color == search_color) {
@@ -1031,15 +1212,16 @@ void Admin::remove_product() {
 					else aux++;
 
     			if(aux != 0) {
-						brands.push_back(brand);
-		  			colors.push_back(color);
-		  			quantities.push_back(quantity);
-		  			prices.push_back(price);
+						brands.push_back(search_brand);
+		  			colors.push_back(search_color);
+		  			quantities.push_back(search_quantity);
+		  			prices.push_back(search_price);
 						aux = 0;
 					}
       	}
 				sunglasses_strg.close();
 
+//
 				int s = brands.size();
 
         if(!product_exists)
