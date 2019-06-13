@@ -9,8 +9,6 @@ Projeto final da disciplina de **Programação e Desenvolvimento de Software II 
 | [Motivação](#motivação) | [Integrantes](#integrantes) | [Documentação](#documentação) | [User Stories](#user-stories) | [Como usar](#como-usar) |
 | ----------- | ------------- | -------------- | -------------- | ----------- |
 
-(a tabela acima terá links , como os que o Flávio usou no repositório da matéria)
-
 ---
 
 ### Introdução
