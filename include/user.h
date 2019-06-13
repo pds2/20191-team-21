@@ -5,13 +5,13 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "product.h"
 
 using namespace std;
 
 class User {
 public:
     //attributes
+    bool _admin;
     string _name;
     string _login;
     string _password;

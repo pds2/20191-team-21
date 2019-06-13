@@ -1,15 +1,14 @@
-// #ifndef ADMIN_H_PDS
-// #define ADMIN_H_PDS
+// #ifndef USER_ADMIN_H_PDS
+// #define USER_ADMIN_H_PDS
 // 
 // #include "user.h"
 // #include "storage_warehouse.h"
 // 
 // class Admin : public User {
-//     Warehouse warehouse;
 // 
 // public:
 //     //CONSTRUCTOR
-//     Admin(string name, string login, string password);
+//     Admin();
 // 
 //     //GETTERS
 //     string get_name() override;
@@ -25,4 +24,5 @@
 // 
 // };
 // 
-// #endif // ADMIN_H_PDS
+// #endif // USER_ADMIN_H_PDS
+// 
