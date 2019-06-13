@@ -31,7 +31,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae lacus a 
   LINK DOCUMENTAÇÃO
 
 ### Slides
-  COLOCAR SLIDES DA APRESENTAÇÃO
+Clique [aqui](https://github.com/pds2/20191-team-21/blob/master/other_arquives/Apresentação%20Trabalho%20Final%20-%20PDSII.pdf) para acessar os slides que usamos para a apresentação
 
 ### User Stories
 
