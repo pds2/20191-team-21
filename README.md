@@ -6,7 +6,7 @@
 Projeto final da disciplina de **Programação e Desenvolvimento de Software II (DCC204)** da **UFMG** em 2019/1.
 ## Tema: e-commerce
 
-| [Motivação] | [Integrantes] | [Documentação] | [User Stories] | [Como usar] |
+| [Motivação](### Motivação) | [Integrantes](### Integrantes) | [Documentação](### Documentação) | [User Stories](### User-Stories) | [Como usar](### Como-usar) |
 | ----------- | ------------- | -------------- | -------------- | ----------- |
 
 (a tabela acima terá links , como os que o Flávio usou no repositório da matéria)
@@ -32,7 +32,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae lacus a 
 ### Documentação
   LINK DOCUMENTAÇÃO
 
-### User-Stories
+### User Stories
 
 - Como administrador do sistema, quero visualizar, cadastrar, remover e editar produtos na plataforma para que eu possa manter o catálogo da loja atualizado.
 
@@ -50,7 +50,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae lacus a 
 
 - Como usuário, gostaria de efetivar compras dos produtos selecionados no carrinho, utilizando um cartão cadastrado.
 
-### Como-usar
+### Como usar
 Aqui vai um guia que vou fazer com instruções de baixar e executar o release
   ``` 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
