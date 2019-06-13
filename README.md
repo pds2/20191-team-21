@@ -12,7 +12,6 @@ Projeto final da disciplina de **Programação e Desenvolvimento de Software II 
 
 (a tabela acima terá links , como os que o Flávio usou no repositório da matéria)
 
-#trabalho - pds 2 -grupo21
 
 ## Introdução
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae lacus a orci placerat tempor id sed orci. Duis aliquet nec lorem vel mattis. Proin sit amet odio sed metus finibus viverra. Maecenas elementum, libero fermentum porttitor pretium, diam orci faucibus enim, at suscipit metus magna ut massa. Vivamus auctor at sem ac feugiat. Duis cursus placerat convallis. Aenean efficitur sit amet felis vel venenatis. Duis nec molestie libero. Nullam vel sodales neque
@@ -20,7 +19,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae lacus a 
 ## Motivação
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae lacus a orci placerat tempor id sed orci. Duis aliquet nec lorem vel mattis. Proin sit amet odio sed metus finibus viverra. Maecenas elementum, libero fermentum porttitor pretium, diam orci faucibus enim, at suscipit metus magna ut massa. Vivamus auctor at sem ac feugiat. Duis cursus placerat convallis. Aenean efficitur sit amet felis vel venenatis. Duis nec molestie libero. Nullam vel sodales neque.
 
-### Integrantes
+## Integrantes
 
 - Ágatha Soares (@agathags)
 - Eduardo Fiuza (@EduuF)
@@ -30,10 +29,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae lacus a 
 
 > Professores: Flávio Figueiredo (@flaviovdf) e Júlio César(@juliosoaresreis)
 
-### Documentação
+## Documentação
   LINK DOCUMENTAÇÃO
 
-### User Stories
+## User Stories
 
 - Como administrador do sistema, quero visualizar, cadastrar, remover e editar produtos na plataforma para que eu possa manter o catálogo da loja atualizado.
 
@@ -51,7 +50,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae lacus a 
 
 - Como usuário, gostaria de efetivar compras dos produtos selecionados no carrinho, utilizando um cartão cadastrado.
 
-### Como usar
+## Como usar
 Aqui vai um guia que vou fazer com instruções de baixar e executar o release
   ``` 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
