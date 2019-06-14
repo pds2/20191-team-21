@@ -10,10 +10,10 @@ User::User(string name, string login, string password) {
 //GETTERS
 string User::get_name(){
     return this->_name;
-};
+}
 string User::get_login(){
     return this->_login;
-};
+}
 string User::get_password(){
     return this->_password;
-};
+}

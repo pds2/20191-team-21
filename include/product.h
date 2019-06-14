@@ -8,37 +8,34 @@
 #include <algorithm>
 #include <map>
 
-#define ID_CLOTHES "000"
-#define ID_SHOES "001"
-#define ID_SUNGLASSES "002"
-
+// #define FEATURES_LIST { "type", "brand", "model", "color", "size" }
+//     vector<string> _feature_list FEATURES_LIST;
 using namespace std;
 
 class Product {
-protected:
+private:
     string _product_id;
-public:
+ 
+    map<string, string> _features;
+
     double _price;
-    string _type;
-    string _color;
-    string _brand;
     unsigned int _quantity;
+
 //CONSTRUCTOR
-    Product(double price, string type, string color, string brand, unsigned int quantity);
+    Product(map<string, string> features, double price, unsigned int quantity);
+
+    void create_feature();
+    string generate_id(map<string, string> features);
 
 //SETTERS
-    void set_price(double price);
-    void set_type(string type);
-    void set_color(string color);
-    void set_brand(string brand);
-    void set_quantity(unsigned int quantity);
+    void set_feature(string feature, string value);
     void update_quantity(unsigned int add);
+    void set_quantity(unsigned int quantity);
+    void set_price(double price);
 
 //GETTERS
+    string get_feature(string feature);   
     double get_price() const;
-    string get_type() const;
-    string get_color() const;
-    string get_brand() const;
     unsigned int get_quantity() const;
     string get_id() const;
 
@@ -52,7 +49,7 @@ public:
     bool equals(const Product &product) const;
 
 //PRINTER
-    virtual void print() const = 0;
+    void print() const;
 };
 
 #endif //PRODUCT_H_PDS

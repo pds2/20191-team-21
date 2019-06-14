@@ -4,28 +4,25 @@
 
 //CONSTRUCTOR
 // Product::Product(double price, int quantity, string type, string color, string brand, string product_id){
-Product::Product(double price, string type, string color, string brand, unsigned int quantity){
-    string id = type + brand + color;
-    transform(id.begin(), id.end(), id.begin(), ::toupper);
-    this->_product_id = id;
+Product::Product(map<string, string> features, double price, unsigned int quantity){
+    this->_features = features;
     this->_price = price;
-    this->_brand = std::move(brand);
-    this->_color = std::move(color);
-    this->_type = std::move(type);
-    this->_quantity = std::move(quantity);
+    this->_quantity = quantity;
+    this->_product_id = Product::generate_id(features);
+}
+
+string Product::generate_id(map<string, string> features){
+    string key;
+    for (const auto& i : features){
+        key += i.second;
+    }
+    transform(key.begin(), key.end(), key.begin(), ::toupper);
+    return key;
 }
 
 //SETTERS
-void Product::set_type(string type) {
-    this->_type = std::move(type);
-}
-
-void Product::set_brand(string brand) {
-    this->_brand = std::move(brand);
-}
-
-void Product::set_color(string color) {
-    this->_type = std::move(color);
+void Product::set_feature(string feature, string value){
+    this->_features[feature] = value;
 }
 
 void Product::set_price(double price){
@@ -33,38 +30,27 @@ void Product::set_price(double price){
 }
 
 void Product::set_quantity(unsigned int quantity){
-    this->_quantity = quantity;
+    this->_quantity += quantity;
 }
 
 void Product::update_quantity(unsigned int add){
     this->_quantity += add;
 }
+
 //GETTERS
-double Product::get_price() const {
+string Product::get_feature(string feature){
+    return this->_features[feature];
+}
+
+double Product::get_price() const{
     return this->_price;
 }
-
-string Product::get_type() const {
-    return this->_type;
-}
-
-string Product::get_brand() const {
-    return this->_brand;
-}
-
-string Product::get_color() const {
-    return this->_color;
-}
-
-unsigned int Product::get_quantity() const {
+unsigned int Product::get_quantity() const{
     return this->_quantity;
 }
-
-string Product::get_id() const {
+string Product::get_id() const{
     return this->_product_id;
 }
-
-
 //OPERATORS
 
 bool Product::operator>(const Product &product) const {
@@ -89,9 +75,12 @@ bool Product::equals(const Product &product) const {
     return (this->_product_id == product._product_id);
 }
 
-// void Product::print() const {
-//         cout << "Produto: " << this->_type << endl
-//         << "Marca: " << this->_brand << endl
-//         << "Cor: " << this->_color << endl
-//         << "Preço(R$): " << this->_price << endl;
-// }
+void Product::print() const {
+    cout << "---" << endl;
+    for (auto const& i : _features) {
+        cout  << i.first
+              << ' : ' 
+              << i.second
+              << endl;
+    }
+}

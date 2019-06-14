@@ -1,0 +1,5 @@
+To-do
+1. Add persistent and sensitive data files to .gitignore
+2. No Product subclasses
+3. Change from interactive menu to Terminal
+4. Use map of actions instead of ifs ans switches
