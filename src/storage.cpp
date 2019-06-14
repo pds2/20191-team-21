@@ -2,15 +2,16 @@
 
 Storage::Storage() {}
 
-void Storage::add_product(string product_id, shared_ptr<Product> product){
-    map<string, shared_ptr<Product>>::iterator i = this->_storage.find(product_id);
+void Storage::add_product(shared_ptr<Product> product){
+    
+    map<string, shared_ptr<Product>>::iterator i = this->_storage.find(product->_product_id);
 
     if (i != _storage.end()){
         i->second->update_quantity(product->get_quantity());
         return;
     }
     else {
-        _storage.insert(pair<string, shared_ptr<Product>>(product_id, product));
+        _storage.insert(pair<string, shared_ptr<Product>>(product->_product_id, product));
     }
 }
 

@@ -20,9 +20,9 @@ public:
     User(string name, string login, string password);
 
     //methods
-    virtual string get_name();
-    virtual string get_login();
-    virtual string get_password();
+    virtual string get_name() = 0;
+    virtual string get_login() = 0;
+    virtual string get_password() = 0;
 
 };
 

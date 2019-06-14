@@ -1,5 +1,3 @@
-#include <utility>
-
 #include "product.h"
 
 //CONSTRUCTOR
@@ -8,16 +6,7 @@ Product::Product(map<string, string> features, double price, unsigned int quanti
     this->_features = features;
     this->_price = price;
     this->_quantity = quantity;
-    this->_product_id = Product::generate_id(features);
-}
-
-string Product::generate_id(map<string, string> features){
-    string key;
-    for (const auto& i : features){
-        key += i.second;
-    }
-    transform(key.begin(), key.end(), key.begin(), ::toupper);
-    return key;
+    this->_product_id = IdMaker::make_id(features);
 }
 
 //SETTERS
@@ -79,8 +68,10 @@ void Product::print() const {
     cout << "---" << endl;
     for (auto const& i : _features) {
         cout  << i.first
-              << ' : ' 
+              << " : " 
               << i.second
               << endl;
     }
+    cout << "Preço: $" << this->_price << endl
+         << "Qtd em estoque: " << this->_quantity << endl;
 }

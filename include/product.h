@@ -7,6 +7,9 @@
 #include <sstream>
 #include <algorithm>
 #include <map>
+#include <utility>
+
+#include "idmaker.h"
 
 // #define FEATURES_LIST { "type", "brand", "model", "color", "size" }
 //     vector<string> _feature_list FEATURES_LIST;
@@ -14,12 +17,14 @@ using namespace std;
 
 class Product {
 private:
-    string _product_id;
- 
     map<string, string> _features;
 
     double _price;
     unsigned int _quantity;
+
+
+public:
+    string _product_id;
 
 //CONSTRUCTOR
     Product(map<string, string> features, double price, unsigned int quantity);

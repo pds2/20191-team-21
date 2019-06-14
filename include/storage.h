@@ -1,9 +1,7 @@
 #ifndef STORAGE_H_PDS
 #define STORAGE_H_PDS
 
-#include "product_clothes.h"
-#include "product_sunglasses.h"
-#include "product_shoes.h"
+#include "product.h"
 #include <memory>
 
 class Storage {
@@ -12,7 +10,7 @@ protected:
 public:
     Storage();
 
-    void add_product(string product_id, shared_ptr<Product> product);
+    void add_product(shared_ptr<Product> product);
     void remove_product(string product_id);
 
     shared_ptr<Product> get_product (string product_id) const;
