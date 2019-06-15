@@ -52,32 +52,29 @@ void Terminal::print_greetings(){
 void Terminal::print_help(){
     cout << "Ajuda e lista de comandos:" << endl;
 }
-void Terminal::menu_product_to_warehouse(){
-    int category;
-
-    while(true){
-        cout << endl << "Adicionando Produto..." << endl;
-        
-        cout << "Selecione a categoria do produto que voce deseja adicionar oou qualquer outro valor para retornar:" << endl
-             << "1 - Roupa" << endl
-             << "2 - Sapato" << endl
-             << "3 - Oculos de sol" << endl;
-        cin >> category;
-        cout << endl;
-        
-        switch (category){
-            case 1:
-                // Add roupa
-            case 2:
-                // Add sapato
-            case 3:
-                // add oculos
-            default:
-                return;
-        }
-    }
+void Terminal::c_create_product(){
+    Factory::make_product();
 
 }
+void Terminal::c_edit_product(){
+
+}
+
+
 void Terminal::menu_product_to_basket(){
 
 }
+
+//general
+void c_list_products(){
+    this->_warehouse.list_products();
+}
+//admin   
+void c_create_product()
+void c_edit_product()
+void c_rm_product_warehouse()
+//client
+void c_add_product_basket()
+void c_rm_product_basket()
+void c_view_basket()
+void c_checkout_basket()

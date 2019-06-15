@@ -17,6 +17,8 @@ public:
     map<string, shared_ptr<Product>>::iterator get_product_tuple (string product_id);
 
     void list_products() const;
+
+    void clear();
 };
 
 #endif //STORAGE_H_PDS

@@ -44,3 +44,7 @@ void Storage::list_products() const {
     for (auto& i : this->_storage) i.second->print();
     cout << "#############################" << endl;
 }
+
+void Storage::clear() {
+    this->_storage.clear();
+}
