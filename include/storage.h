@@ -13,8 +13,8 @@ public:
     void add_product(shared_ptr<Product> product);
     void remove_product(string product_id);
 
-    shared_ptr<Product> get_product (string product_id) const;
     map<string, shared_ptr<Product>>::iterator get_product_tuple (string product_id);
+    shared_ptr<Product> get_product (string product_id);
 
     void list_products() const;
 
@@ -22,4 +22,3 @@ public:
 };
 
 #endif //STORAGE_H_PDS
-
