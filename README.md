@@ -28,7 +28,7 @@ Esse trabalho é a consolidação de todo o aprendizado na disciplina de PDSII, 
 > Professores: Flávio Figueiredo (@flaviovdf) e Júlio César(@juliosoaresreis)
 
 ### Documentação
-  LINK DOCUMENTAÇÃO
+Clique [aqui](https://github.com/pds2/20191-team-21/blob/master/other_arquives/Documenta%C3%A7%C3%A3o%20e-commerce%20(GRUPO%2021).pdf) para acessar o pdf com a documentação do programa
 
 ### Slides
 Clique [aqui](https://github.com/pds2/20191-team-21/blob/master/other_arquives/Apresentação%20Trabalho%20Final%20-%20PDSII.pdf) para acessar os slides que usamos para a apresentação
