@@ -15,7 +15,7 @@ Projeto final da disciplina de **Programação e Desenvolvimento de Software II 
 Esse trabalho é a consolidação de todo o aprendizado na disciplina de PDSII, ao longo do primeiro semestre de 2019. Conceitos inéditos como modularização, Orientação a Objetos, testes de unidade, refatoração, desenvolvimento em grupo e Github foram implementados ao longo do trabalho de modo a aplicar tudo em um software de médio porte que junta diversas funções em um único ambiente. O resultado disso é um programa funcional, robusto e que engloba muito do que aprendemos ao longo da disciplina.
 
 ### Motivação
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae lacus a orci placerat tempor id sed orci. Duis aliquet nec lorem vel mattis. Proin sit amet odio sed metus finibus viverra. Maecenas elementum, libero fermentum porttitor pretium, diam orci faucibus enim, at suscipit metus magna ut massa. Vivamus auctor at sem ac feugiat. Duis cursus placerat convallis. Aenean efficitur sit amet felis vel venenatis. Duis nec molestie libero. Nullam vel sodales neque.
+É evidente o aumento expressivo do número de comércios eletrônicos nos últimos anos. O avanço tecnológico possibilitou a simulação dessa dinâmica no mundo digital e conectou as pessoas a esse ambiente. Foi justamente a importância do comércio eletrônico na vida das pessoas e na economia moderna que nos motivou a buscar entender melhor o que acontece por trás de todo esse processo. Dessa forma, tivemos que pensar como administradores de lojas eletrônicas e como clientes para que pudéssemos criar um programa, ainda que simples, que pudesse englobar toda essa experiência dos usuários (comprador e vendedor).
 
 ### Integrantes
 
