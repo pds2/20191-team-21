@@ -15,10 +15,13 @@
 #include <functional>
 
 class Terminal {
-    map<string, function<void(Terminal*)>> _commands;
-    unique_ptr<User> _user;
-    shared_ptr<Basket> _basket;
-    shared_ptr<Warehouse> _warehouse;
+    using TerminalFPtr = function<void(void)>;
+
+    map<string, TerminalFPtr> _commands;
+
+    static User _user;
+    static Basket _basket;
+    static Warehouse _warehouse;
 public:
     Terminal();
 
@@ -28,19 +31,19 @@ public:
     void menu_product_to_basket();
 
 //general
-    void c_list_products() const;
-    void c_print_help() const;
+    static void c_list_products();
+    static void c_print_help();
 //admin   
-    void c_create_product() const;
-    void c_edit_product() const;
-    void c_rm_product_warehouse() const;
+    static void c_create_product();
+    static void c_edit_product();
+    static void c_rm_product_warehouse();
 //client
-    void c_add_product_basket() const;
-    void c_rm_product_basket() const;
-    void c_view_basket() const;
-    void c_checkout_basket() const;
-    void c_clear_basket() const;
-    void c_clear_warehouse() const;
+    static void c_add_product_basket();
+    static void c_rm_product_basket();
+    static void c_view_basket();
+    static void c_checkout_basket();
+    static void c_clear_basket();
+    static void c_clear_warehouse();
 
     void print_greetings() const;
 };
