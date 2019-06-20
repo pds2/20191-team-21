@@ -7,29 +7,29 @@
 Terminal::Terminal(){
     shared_ptr<Basket> _basket;
     shared_ptr<Warehouse> _warehouse;
-    Commands _commands;
-    _commands.insert("add", &Terminal::menu_home);
-    _commands.insert("list products", &Terminal::c_list_products);
-    _commands.insert("create_product", &Terminal::c_create_product);
-    _commands.insert("warehouse remove product", &Terminal::c_rm_product_warehouse);
-    _commands.insert("warehouse clear", &Terminal::c_clear_warehouse);
-    _commands.insert("basket add product", &Terminal::c_add_product_basket);
-    _commands.insert("basket remove product", &Terminal::c_rm_product_basket);
-    _commands.insert("basket view", &Terminal::c_view_basket);
-    _commands.insert("basket checkout", &Terminal::c_checkout_basket);
-    _commands.insert("basket clear", &Terminal::c_clear_basket);
+    map<string, function<void(Terminal*)>> _commands;
+
+    _commands.emplace("help", &Terminal::c_print_help);
+    _commands.emplace("list products", &Terminal::c_list_products);
+    _commands.emplace("create product", &Terminal::c_create_product);
+    _commands.emplace("warehouse remove product", &Terminal::c_rm_product_warehouse);
+    _commands.emplace("warehouse clear", &Terminal::c_clear_warehouse);
+    _commands.emplace("basket add product", &Terminal::c_add_product_basket);
+    _commands.emplace("basket remove product", &Terminal::c_rm_product_basket);
+    _commands.emplace("basket view", &Terminal::c_view_basket);
+    _commands.emplace("basket checkout", &Terminal::c_checkout_basket);
+    _commands.emplace("basket clear", &Terminal::c_clear_basket);
 }
 void Terminal::menu_home(){
     while(true){
         string cmd;
         cout << endl << "Digite um comando (help para a lista de opcoes): " << endl;
-        while (getline (cin, cmd));
-        cout << endl;
+        cin >> cmd;
+        cin.get();
         if (strcmp(cmd.c_str(), "exit") == 0){
             break;
         }
-        _commands.searchAndCall<void>(cmd);
-
+        this->_commands[cmd](this);
     }
 }
 
