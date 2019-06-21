@@ -54,14 +54,20 @@ Clique [aqui](https://github.com/pds2/20191-team-21/blob/master/other_arquives/A
 ### Como usar
 Lista de comandos para utilização do programa:
 Lista de comandos:" << endl << endl
-- ``help``                     -> Lista comandos de ajuda`` << endl << endl
-- ``list products``            -> Lista os produtos em estoque`` << endl << endl
-- ``create product``           -> Adiciona produto da base de dados`` << endl << endl
-- ``warehouse remove product`` -> Remove produto da base de dados`` << endl << endl
-- ``warehouse clear``          -> Limpa a base de dados`` << endl << endl
-- ``warehouse save``           -> Salva a base de dados em arquivo`` << endl << endl
-- ``basket add product``       -> Adiciona produto a cesta de compras`` << endl << endl
-- ``basket remove product``    -> Remove produto da cesta de compras`` << endl << endl
-- ``basket view``              -> Lista produtos na cesta de compras`` << endl << endl
-- ``basket checkout``          -> Finaliza compra`` << endl << endl
-- ``basket clear``             -> Limpa cesta de compras`` << endl << endl;
+
+> Mutual commands
+- ``help``                     -> Lista comandos de ajuda;
+
+>Admin commands
+- ``list products``            -> Lista os produtos em estoque;
+- ``create product``           -> Adiciona produto da base de dados;
+- ``warehouse remove product`` -> Remove produto da base de dados;
+- ``warehouse clear``          -> Limpa a base de dados;
+- ``warehouse save``           -> Salva a base de dados em arquivo;
+
+>Admin commands
+- ``basket view``              -> Lista produtos na cesta de compras;
+- ``basket add product``       -> Adiciona produto a cesta de compras;
+- ``basket remove product``    -> Remove produto da cesta de compras;
+- ``basket checkout``          -> Finaliza compra;
+- ``basket clear``             -> Limpa cesta de compras;

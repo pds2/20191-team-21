@@ -18,16 +18,16 @@ Terminal::Terminal(){
     Terminal::_admin_commands.emplace("list products", Terminal::c_list_products);
     Terminal::_admin_commands.emplace("create product", Terminal::c_create_product);
     Terminal::_admin_commands.emplace("warehouse remove product", Terminal::c_rm_product_warehouse);
+    Terminal::_admin_commands.emplace("warehouse save", Terminal::c_save_warehouse);
     Terminal::_admin_commands.emplace("warehouse clear", Terminal::c_clear_warehouse);
- 
+  
+    Terminal::_client_commands.emplace("help", Terminal::c_print_help);
     Terminal::_client_commands.emplace("view products", Terminal::c_list_products);
     Terminal::_client_commands.emplace("basket add_product", Terminal::c_add_product_basket);
     Terminal::_client_commands.emplace("basket remove_product", Terminal::c_rm_product_basket);
     Terminal::_client_commands.emplace("basket view", Terminal::c_view_basket);
     Terminal::_client_commands.emplace("basket checkout", Terminal::c_checkout_basket);
     Terminal::_client_commands.emplace("basket clear", Terminal::c_clear_basket);
-    Terminal::_admin_commands.emplace("warehouse save", Terminal::c_save_warehouse);
-
 }
 
 void Terminal::menu_home(){
@@ -83,12 +83,16 @@ void Terminal::print_greetings() const {
 void Terminal::c_print_help(){
     cout << ">" << endl
          << "Lista de comandos:" << endl << endl
-         << "help" << "                     -> " << "Lista comandos de ajuda" << endl << endl
+         << "help" << "                     -> " << "Lista comandos" << endl << endl
+         << "Admin commads:"<< endl << endl         
          << "list products" << "            -> " << "Lista os produtos em estoque" << endl << endl
          << "create product" << "           -> " << "Adiciona produto da base de dados" << endl << endl
          << "warehouse remove product" << " -> " << "Remove produto da base de dados" << endl << endl
          << "warehouse clear" << "          -> " << "Limpa a base de dados" << endl << endl
          << "warehouse save" << "           -> " << "Salva a base de dados em arquivo" << endl << endl
+         << "warehouse save" << "           -> " << "Salva a base de dados em arquivo" << endl << endl
+
+         << "Client commads:"<< endl << endl         
          << "basket add product" << "       -> " << "Adiciona produto a cesta de compras" << endl << endl
          << "basket remove product" << "    -> " << "Remove produto da cesta de compras" << endl << endl
          << "basket view" << "              -> " << "Lista produtos na cesta de compras" << endl << endl
