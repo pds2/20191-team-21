@@ -4,7 +4,7 @@
 Warehouse::Warehouse()
     : Storage() {
         
-    }
+}
 
 void Warehouse::read_from_db(){
     ifstream in(DB_FILE);

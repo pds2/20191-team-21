@@ -4,6 +4,8 @@
 #define DB_FILE "test_db"
 #include "product.h"
 
+using namespace std;
+
 class Storage {
 protected:
     map<string, shared_ptr<Product>> _storage;

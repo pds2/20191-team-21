@@ -51,7 +51,7 @@ void Terminal::menu_home(){
         string cmd;
         cout << endl << "Press Enter to continue" << endl;
         cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        cout << endl << "|||||||||||||||||||Screen Divider|||||||||||||||||||" << endl << endl
+        cout << endl << "||||||||||||||||||| Screen Divider |||||||||||||||||||" << endl << endl
              << "Digite um comando (help para a lista de opcoes): " << endl;
         getline(cin,cmd);
         if (strcmp(cmd.c_str(), "exit") == 0){

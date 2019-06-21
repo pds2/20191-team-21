@@ -15,7 +15,6 @@
 
 #define FEATURE_LIST { "TYPE", "MODEL", "COLOR", "SIZE" }
 
-
 using namespace std;
 
 class Product {

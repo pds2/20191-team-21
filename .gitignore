@@ -34,3 +34,6 @@
 *.out
 *.app
 bin/*
+
+# Database
+test_db
