@@ -1,5 +1,6 @@
 ## Mudanças feitas para a [versão final](https://github.com/pds2/20191-team-21/tree/entrega_final) do código
 > Use ``make tests`` para gerar uma base de dados de tests localmente;
+
 > Use ``make run`` para rodar o programa;
 
 ### Documentação
