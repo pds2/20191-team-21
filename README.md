@@ -1,10 +1,21 @@
-# Trabalho Prático PDS2
+<p align="center">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Logo_UFMG.png/320px-Logo_UFMG.png" alt="alt text" width="210" height="82">
+</p>
 
-> Tema: e-commerce
+# Trabalho Prático PDS II
+Projeto final da disciplina de **Programação e Desenvolvimento de Software II (DCC204)** da **UFMG** em 2019/1.
+## Tema: e-commerce
 
-## Introdução
+| [Introdução](#introdução) | [Motivação](#motivação) | [Integrantes](#integrantes) | [Documentação](#documentação) |[Slides](#slides) | [User Stories](#user-stories) | [Como usar](#como-usar) |  
+| ----------- | ------------- | -------------- | -------------- | ----------- | ----------- | ----------- | 
 
-Projeto final da disciplina de Programação e Desenvolvimento de Software II (DCC204) da UFMG em 2019/1.
+---
+
+### Introdução
+Esse trabalho é a consolidação de todo o aprendizado na disciplina de PDSII, ao longo do primeiro semestre de 2019. Conceitos inéditos como modularização, Orientação a Objetos, testes de unidade, refatoração, desenvolvimento em grupo e Github foram implementados ao longo do trabalho de modo a aplicar tudo em um software de médio porte que junta diversas funções em um único ambiente. O resultado disso é um programa funcional, robusto e que engloba muito do que aprendemos ao longo da disciplina.
+
+### Motivação
+É evidente o aumento expressivo do número de comércios eletrônicos nos últimos anos. O avanço tecnológico possibilitou a simulação dessa dinâmica no mundo digital e conectou as pessoas a esse ambiente. Foi justamente a importância do comércio eletrônico na vida das pessoas e na economia moderna que nos motivou a buscar entender melhor o que acontece por trás de todo esse processo. Dessa forma, tivemos que pensar como administradores de lojas eletrônicas e como clientes para que pudéssemos criar um programa, ainda que simples, que pudesse englobar toda essa experiência dos usuários (comprador e vendedor).
 
 ### Integrantes
 
@@ -14,7 +25,13 @@ Projeto final da disciplina de Programação e Desenvolvimento de Software II (D
 - Rafael Mendonca (@rfm2018)
 - Vitor Mafra (@vitor-mafra)
 
-> Professor: Flávio Figueiredo
+> Professores: Flávio Figueiredo (@flaviovdf) e Júlio César(@juliosoaresreis)
+
+### Documentação
+Clique [aqui](https://github.com/pds2/20191-team-21/blob/master/other_arquives/Documenta%C3%A7%C3%A3o%20e-commerce%20(GRUPO%2021).pdf) para acessar o pdf com a documentação do programa
+
+### Slides
+Clique [aqui](https://github.com/pds2/20191-team-21/blob/master/other_arquives/Apresentação%20Trabalho%20Final%20-%20PDSII.pdf) para acessar os slides que usamos para a apresentação
 
 ### User Stories
 
@@ -34,3 +51,11 @@ Projeto final da disciplina de Programação e Desenvolvimento de Software II (D
 
 - Como usuário, gostaria de efetivar compras dos produtos selecionados no carrinho, utilizando um cartão cadastrado.
 
+### Como usar
+Aqui vai um guia que vou fazer com instruções de baixar e executar o release
+  ``` 
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+    Praesent vitae lacus a orci placerat tempor id sed orci. 
+    Duis aliquet nec lorem vel mattis. Proin sit amet odio sed metus finibus viverra.
+    Maecenas elementum, libero fermentum porttitor pretium, diam orci faucibus enim, at suscipit metus magna ut massa.  
+  ```
