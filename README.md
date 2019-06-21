@@ -52,10 +52,16 @@ Clique [aqui](https://github.com/pds2/20191-team-21/blob/master/other_arquives/A
 - Como usuário, gostaria de efetivar compras dos produtos selecionados no carrinho, utilizando um cartão cadastrado.
 
 ### Como usar
-Aqui vai um guia que vou fazer com instruções de baixar e executar o release
-  ``` 
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-    Praesent vitae lacus a orci placerat tempor id sed orci. 
-    Duis aliquet nec lorem vel mattis. Proin sit amet odio sed metus finibus viverra.
-    Maecenas elementum, libero fermentum porttitor pretium, diam orci faucibus enim, at suscipit metus magna ut massa.  
-  ```
+Lista de comandos para utilização do programa:
+Lista de comandos:" << endl << endl
+- ``help``                     -> Lista comandos de ajuda`` << endl << endl
+- ``list products``            -> Lista os produtos em estoque`` << endl << endl
+- ``create product``           -> Adiciona produto da base de dados`` << endl << endl
+- ``warehouse remove product`` -> Remove produto da base de dados`` << endl << endl
+- ``warehouse clear``          -> Limpa a base de dados`` << endl << endl
+- ``warehouse save``           -> Salva a base de dados em arquivo`` << endl << endl
+- ``basket add product``       -> Adiciona produto a cesta de compras`` << endl << endl
+- ``basket remove product``    -> Remove produto da cesta de compras`` << endl << endl
+- ``basket view``              -> Lista produtos na cesta de compras`` << endl << endl
+- ``basket checkout``          -> Finaliza compra`` << endl << endl
+- ``basket clear``             -> Limpa cesta de compras`` << endl << endl;
