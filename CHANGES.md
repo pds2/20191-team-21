@@ -1,8 +1,9 @@
 # Mudanças finais
 
-> As mudanças desta entrega se encontram na branch "entrega_final"
+> As mudanças desta entrega se encontram na branch [entrega_final](https://github.com/pds2/20191-team-21/tree/entrega_final)
 
 > Use ``make tests`` para gerar a base de dados localmente
+> Use ``make run`` para rodar o programa
 
 - Adicionada opção de criação de base de dados através testes;
 - Removidos classes de produtos diferentes;
