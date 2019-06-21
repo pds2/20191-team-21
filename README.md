@@ -52,7 +52,9 @@ Clique [aqui](https://github.com/pds2/20191-team-21/blob/master/other_arquives/A
 - Como usuário, gostaria de efetivar compras dos produtos selecionados no carrinho, utilizando um cartão cadastrado.
 
 ### Como usar
-Lista de comandos para utilização do programa:
+Para logar como administrador, utilize a chave ``alohomora``.
+
+## Lista de comandos para utilização do programa:
 Lista de comandos:" << endl << endl
 
 > Mutual commands
