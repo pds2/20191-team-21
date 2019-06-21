@@ -1,8 +1,8 @@
 #ifndef STORAGE_H_PDS
 #define STORAGE_H_PDS
 
+#define DB_FILE "test_db"
 #include "product.h"
-#include <memory>
 
 class Storage {
 protected:

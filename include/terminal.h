@@ -14,6 +14,7 @@
 #include <cassert>
 #include <functional>
 
+
 class Terminal {
     using TerminalFPtr = function<void(void)>;
 
@@ -33,6 +34,7 @@ public:
 //general
     static void c_list_products();
     static void c_print_help();
+    static void c_save_warehouse();
 //admin   
     static void c_create_product();
     static void c_edit_product();
@@ -44,6 +46,7 @@ public:
     static void c_checkout_basket();
     static void c_clear_basket();
     static void c_clear_warehouse();
+
 
     void print_greetings() const;
 };

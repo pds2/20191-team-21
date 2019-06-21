@@ -1,13 +1,16 @@
 #include "product.h"
 
+
 //CONSTRUCTOR
 // Product::Product(double price, int quantity, string type, string color, string brand, string product_id){
 Product::Product(map<string, string> features, double price, unsigned int quantity){
+    this->_features.clear();
     this->_features = features;
     this->_price = price;
     this->_quantity = quantity;
     this->_product_id = IdMaker::make_id(features);
 }
+Product::Product(){ }
 
 //SETTERS
 void Product::set_feature(string feature, string value){
@@ -62,6 +65,38 @@ bool Product::operator==(const Product &product) const {
 }
 bool Product::equals(const Product &product) const {
     return (this->_product_id == product._product_id);
+}
+
+shared_ptr<Product> Product::read_from(istream &in){
+    map<string, string> features;
+    vector<string> feature_list = FEATURE_LIST;
+    string feature_key;
+    string feature_value;
+
+    unsigned int quantity;
+    double price;
+
+    for(auto const& f: feature_list) {
+        //cabe um exception com f.first
+        in >> feature_key;
+        in >> feature_value;
+        features[feature_key] = feature_value;
+    }
+    in >> quantity;
+    in >> price;
+    auto product = make_shared<Product>(features, price, quantity);
+    return product;
+}
+
+void Product::save_to(std::ostream &out) {
+    for(auto const& f: this->_features) {
+        out << f.first << endl;
+        out << f.second;
+        out << endl;
+    }
+//    out << endl;
+    out << this->get_price() << endl;
+    out << this->get_quantity() << endl;
 }
 
 void Product::print() const {

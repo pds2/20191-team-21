@@ -1,20 +1,25 @@
 #include "input.h"
 
 shared_ptr<Product> Input::product(){
-    auto product = make_shared<Product>(features(), price(), quantity());
+    map<string, string> features = Input::features();
+    double price = Input::price();
+    unsigned int quantity = Input::quantity();
+    cout << endl;
+    auto product = make_shared<Product>(features, price, quantity);
     return product;
 }
 
 map<string, string> Input::features(){
-    map<string, string> p;
-    vector<string> _feature_list = FEATURES_LIST;
-    for(auto const& i: _feature_list) {
-        string entry;
-        cout << i << ":" << endl;
-        while (getline (cin, entry));
-        p.insert(pair<string, string>(i, entry));
+    map<string, string> features;
+    vector<string> feature_list = FEATURE_LIST;
+    string entry;
+
+    for(auto const& f: feature_list) {
+        cout << "Digite o(a) " << f << ":" << endl;
+        getline (cin, entry);
+        features[f] = entry;
     }
-    return p;
+    return features;
 }
 
 double Input::price(){
