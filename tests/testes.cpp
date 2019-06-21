@@ -39,14 +39,18 @@ TEST_CASE("Product In/Out file") {
 
     shared_ptr<Warehouse> warehouse_1 (new Warehouse());
 
-    Product roupa1(FEAT_MAP_1, PRICE_1, QTY_1);
-    Product roupa2(FEAT_MAP_2, PRICE_2, QTY_2);
-    Product roupa3(FEAT_MAP_2, PRICE_2, QTY_2);
+    Product item1(FEAT_MAP_1, PRICE_1, QTY_1);
+    Product item2(FEAT_MAP_2, PRICE_2, QTY_2);
+    Product item3(FEAT_MAP_3, PRICE_3, QTY_3);
+    Product item4(FEAT_MAP_4, PRICE_4, QTY_4);
+    Product item5(FEAT_MAP_5, PRICE_5, QTY_5);
 
     ofstream out("test_db");
-    roupa1.save_to(out);
-    roupa2.save_to(out);
-    roupa3.save_to(out);
+    item1.save_to(out);
+    item2.save_to(out);
+    item3.save_to(out);
+    item4.save_to(out);
+    item5.save_to(out);
     out.close();
     
     ifstream in("test_db");

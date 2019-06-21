@@ -8,12 +8,13 @@ Warehouse::Warehouse()
 
 void Warehouse::read_from_db(){
     ifstream in(DB_FILE);
-    while (!in.eof()) {
-        auto p = Product::read_from(in);
-        if  (p->get_id().size() > 3) {
-            this->add_product(p);
+    if (!in.fail())
+        while (!in.eof()) {
+            auto p = Product::read_from(in);
+            if  (p->get_id().size() > 3) {
+                this->add_product(p);
+            }
         }
-    }
     in.close();
 }
 
