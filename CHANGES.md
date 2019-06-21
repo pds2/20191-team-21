@@ -12,7 +12,7 @@ A classe Administrador que antes tinha muitos atributos e métodos (e 1300 linha
 ### Terminal de comandos no lugar da navegação por menus
 Criamos uma nova classe Terminal que resolve de uma forma mais elegante toda a navegação antes feita pelo terminal que lia inputs de números e usava sequências de _if's_ e _else's_ para decidir sobre o caminho da execução. A usabilidade do programa agora está mais fluida e simples.
 
-### O fim dos _if's_ (ao menos) no menu de comando
+### O fim dos _if's_ (ao menos no menu de comando)
 Com a classe Terminal, usamos um mapa de comandos que determina o caminho de execução. Seguimos a dica de evitar _if's_ e _switche's_
 
 ### Reestruturação das funções de criação e armazenamento dos produtos
