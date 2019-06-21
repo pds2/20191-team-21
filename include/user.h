@@ -5,6 +5,9 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <memory>
+
+#define ADMIN_KEY "alohomora"
 
 using namespace std;
 
@@ -15,15 +18,22 @@ public:
     string _name;
     string _login;
     string _password;
+    
 
     //CONSTRUCTOR
-    User(string name, string login, string password);
+    User();
+    User(string name, string login, string password, bool _admin);
+    
+    //setter
+    void set_user(string name, string login, string password, bool admin);
 
     //methods
-    virtual string get_name();
-    virtual string get_login();
-    virtual string get_password();
+    string get_name();
+    string get_login();
+    string get_password();
+    bool is_admin();
 
+    void set_admin(bool a);
 };
 
 #endif //USER_H_PDS

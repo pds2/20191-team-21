@@ -11,18 +11,22 @@ Warehouse Terminal::_warehouse;
 Terminal::Terminal(){
 
     Terminal::_warehouse.read_from_db();
+    this->_user = User("Salem", "salem666", "passwd", false);
 
-    Terminal::_commands.emplace("help", Terminal::c_print_help);
-    Terminal::_commands.emplace("list products", Terminal::c_list_products);
-    Terminal::_commands.emplace("create product", Terminal::c_create_product);
-    Terminal::_commands.emplace("warehouse remove product", Terminal::c_rm_product_warehouse);
-    Terminal::_commands.emplace("warehouse clear", Terminal::c_clear_warehouse);
-    Terminal::_commands.emplace("basket add_product", Terminal::c_add_product_basket);
-    Terminal::_commands.emplace("basket remove_product", Terminal::c_rm_product_basket);
-    Terminal::_commands.emplace("basket view", Terminal::c_view_basket);
-    Terminal::_commands.emplace("basket checkout", Terminal::c_checkout_basket);
-    Terminal::_commands.emplace("basket clear", Terminal::c_clear_basket);
-    Terminal::_commands.emplace("warehouse save", Terminal::c_save_warehouse);
+
+    Terminal::_admin_commands.emplace("help", Terminal::c_print_help);
+    Terminal::_admin_commands.emplace("list products", Terminal::c_list_products);
+    Terminal::_admin_commands.emplace("create product", Terminal::c_create_product);
+    Terminal::_admin_commands.emplace("warehouse remove product", Terminal::c_rm_product_warehouse);
+    Terminal::_admin_commands.emplace("warehouse clear", Terminal::c_clear_warehouse);
+ 
+    Terminal::_client_commands.emplace("view products", Terminal::c_list_products);
+    Terminal::_client_commands.emplace("basket add_product", Terminal::c_add_product_basket);
+    Terminal::_client_commands.emplace("basket remove_product", Terminal::c_rm_product_basket);
+    Terminal::_client_commands.emplace("basket view", Terminal::c_view_basket);
+    Terminal::_client_commands.emplace("basket checkout", Terminal::c_checkout_basket);
+    Terminal::_client_commands.emplace("basket clear", Terminal::c_clear_basket);
+    Terminal::_admin_commands.emplace("warehouse save", Terminal::c_save_warehouse);
 
 }
 
@@ -32,6 +36,17 @@ void Terminal::menu_home(){
         if(first_run){
             first_run = false;
             Terminal::print_greetings();
+            string pass;
+            cout << "Se você for admin, entre com sua chave:" << endl;
+            
+            getline(cin,pass);
+            if (strcmp(pass.c_str(), ADMIN_KEY) == 0){            
+                _user.set_admin(true);
+                cout << "Logged as admin!" << endl;
+            } else {
+                cout << "Invalid key provided, logged as client!" << endl;
+                _user.set_admin(false);
+            }
         }
         string cmd;
         cout << endl << "Press Enter to continue" << endl;
@@ -43,7 +58,12 @@ void Terminal::menu_home(){
             return;
         }
         if (cmd.size() > 3){
-            Terminal::_commands[cmd]();
+            if (this->_user.is_admin()){
+                Terminal::_admin_commands[cmd]();
+            }
+            else {
+                Terminal::_client_commands[cmd]();
+            }
         }
     }
 }
@@ -58,7 +78,6 @@ void Terminal::print_greetings() const {
        << "  ( /                 \\ )           ||  |---'\\  \\         " << endl
        << "   (_.·´¯`·.¸¸.·´¯`·.¸_)            (_(__|   ((__|         " << endl
        << "(Arte precisa de um terminal monospace para sair corretamente)" << endl;
-    // Terminal::_user.get_login() << "!" << endl;
 }
 //general
 void Terminal::c_print_help(){

@@ -1,14 +1,4 @@
 COLOR
-black
-MODEL
-manual
-SIZE
-38
-TYPE
-Manual entry
-66.6
-3
-COLOR
 hue1
 MODEL
 modelo1
@@ -16,8 +6,8 @@ SIZE
 s1
 TYPE
 tipo1
-1
 10
+1
 COLOR
 hue2
 MODEL
@@ -26,5 +16,15 @@ SIZE
 s2
 TYPE
 tipo2
+20
 2
-40
+COLOR
+hue2
+MODEL
+modelo2
+SIZE
+s2
+TYPE
+tipo2
+20
+2

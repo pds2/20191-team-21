@@ -18,9 +18,10 @@
 class Terminal {
     using TerminalFPtr = function<void(void)>;
 
-    map<string, TerminalFPtr> _commands;
+    map<string, TerminalFPtr> _admin_commands;
+    map<string, TerminalFPtr> _client_commands;
 
-    static User _user;
+    User _user;
     static Basket _basket;
     static Warehouse _warehouse;
 public:
