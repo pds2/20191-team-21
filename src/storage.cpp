@@ -32,10 +32,13 @@ void Storage::list_products() const {
     map<shared_ptr<Product>, unsigned int>::iterator it;
     cout << "#############################" << endl
          << "########  PRODUTOS   ########" << endl
-         << "#############################" << endl << endl << endl;
+         << "#############################" << endl;
 
     for (auto& i : this->_storage) i.second->print();
-    cout << "#############################" << endl;
+    
+    cout << "#############################" << endl
+         << "######## End of list ########" << endl
+         << "#############################" << endl;
 }
 
 void Storage::clear() {

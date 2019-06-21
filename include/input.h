@@ -12,8 +12,6 @@
 
 #include "product.h"
 
-#define FEATURES_LIST { "type", "brand", "model", "color", "size" }
-
 using namespace std;
 
 class Input {

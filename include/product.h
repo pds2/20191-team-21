@@ -1,6 +1,7 @@
 #ifndef PRODUCT_H_PDS
 #define PRODUCT_H_PDS
 
+#include <stdio.h>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -8,11 +9,13 @@
 #include <algorithm>
 #include <map>
 #include <utility>
+#include <memory>
 
 #include "idmaker.h"
 
-// #define FEATURES_LIST { "type", "brand", "model", "color", "size" }
-//     vector<string> _feature_list FEATURES_LIST;
+#define FEATURE_LIST { "TYPE", "MODEL", "COLOR", "SIZE" }
+
+
 using namespace std;
 
 class Product {
@@ -27,6 +30,7 @@ public:
     string _product_id;
 
 //CONSTRUCTOR
+    Product();
     Product(map<string, string> features, double price, unsigned int quantity);
 
     void create_feature();
@@ -53,6 +57,9 @@ public:
     bool operator==(const Product &product) const;
     bool equals(const Product &product) const;
 
+//DATABASE
+    void save_to(std::ostream &out);
+    static shared_ptr<Product> read_from(std::istream &in);
 //PRINTER
     void print() const;
 };
