@@ -1,7 +1,8 @@
 ## Mudanças feitas para a [versão final](https://github.com/pds2/20191-team-21/tree/entrega_final) do código
-> Use ``make tests`` para gerar uma base de dados de tests localmente;
-> Use ``make run`` para rodar o programa;
-> Para logar como administrador, utilize a chave ``alohomora``.
+### Como usar
+- Use ``make tests`` para gerar uma base de dados de tests localmente;
+- Use ``make run`` para rodar o programa;
+- Para logar como administrador, utilize a chave ``alohomora``.
 
 
 ### Documentação
@@ -23,4 +24,4 @@ Com a classe Terminal, usamos um mapa de comandos que determina o caminho de exe
 Com todas as mudanças, tivemos que reestruturar a criação e armazenamento dos produtos de modo a seguir melhor as novas regras definidas pelo contrato do código. Agora existe ua superclasse Estoque e duas subclasses: Armazem e Carrinho. Essa foi uma herança que não havíamos pensado anteriormente, mas que depois da implementação do primeiro versionamento do código passou a fazer todo o sentido, afinal, o carrinho do cliente era um “estoque” próprio e interessante ao usuário que comprava os produtos, enquanto o Armazém passou a representar todos os produtos presentes no estoque da loja. Assim, as subclasses seguem esse contrato e herdam esse comportamento de mapeamento da classe Produtos, mas com suas peculiaridades. Somente o Administrador tem a capacidade de modificar o estoque, por exemplo, portanto somente ele pode alterar a quantidade de produtos dentro da classe Armazém. E assim segue essa dinâmica no Estoque, tanto para a modificação do Armazém, através do administrador, quanto para a personalização do Carrinho por meio das ações do cliente.
 
 
-### Adicionada opção de criação de base de dados através testes
+### Adicionada opção de criação de base de dados através do make tests
